@@ -11,6 +11,9 @@
     <div>
     
     </div>
+    <asp:GridView ID="GridView1" runat="server" 
+        onselectedindexchanged="GridView1_SelectedIndexChanged">
+    </asp:GridView>
     </form>
 </body>
 </html>

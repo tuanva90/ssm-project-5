@@ -26,16 +26,22 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
 		Release|.NET = Release|.NET
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Debug|.NET.ActiveCfg = Debug|.NET
 		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Debug|.NET.Build.0 = Debug|.NET
 		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Debug|Mixed Platforms.Build.0 = Debug|.NET
 		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Release|.NET.ActiveCfg = Debug|.NET
 		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Release|.NET.Build.0 = Debug|.NET
 		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{C5B37DFF-69ED-4A27-8ED4-A1D78CC13B2D}.Release|Mixed Platforms.Build.0 = Debug|.NET
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
