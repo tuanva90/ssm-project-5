@@ -1,0 +1,5 @@
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DTO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DTO\bin\Debug\DTO.dll
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DTO\bin\Debug\DTO.pdb
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DTO\obj\Debug\DTO.dll
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DTO\obj\Debug\DTO.pdb

@@ -1,0 +1,7 @@
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DAO\bin\Debug\DAO.dll
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DAO\bin\Debug\DAO.pdb
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DAO\obj\Debug\DAO.dll
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DAO\obj\Debug\DAO.pdb
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DAO\bin\Debug\DTO.dll
+C:\Users\THANHIT\Documents\Visual Studio 2008\Projects\SSM_WebServices\DAO\bin\Debug\DTO.pdb
