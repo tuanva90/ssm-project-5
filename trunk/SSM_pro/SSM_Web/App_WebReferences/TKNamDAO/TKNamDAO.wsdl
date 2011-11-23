@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:portType name="TKNamDAOSoap" />
+  <wsdl:portType name="TKNamDAOSoap12" />
+  <wsdl:binding name="TKNamDAOSoap" type="tns:TKNamDAOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  </wsdl:binding>
+  <wsdl:binding name="TKNamDAOSoap12" type="tns:TKNamDAOSoap12">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  </wsdl:binding>
+  <wsdl:service name="TKNamDAO">
+    <wsdl:port name="TKNamDAOSoap" binding="tns:TKNamDAOSoap">
+      <soap:address location="http://localhost:55273/SSM_WebServices/DAO/TKNamDAO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TKNamDAOSoap12" binding="tns:TKNamDAOSoap12">
+      <soap12:address location="http://localhost:55273/SSM_WebServices/DAO/TKNamDAO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
