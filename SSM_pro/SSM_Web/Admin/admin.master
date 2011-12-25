@@ -1,0 +1,146 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="Admin_admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+    <style type="text/css">
+    body{
+    font-family:arial;
+    margin:0px; 
+    padding:0px;
+    }
+    #menuqt{ height:40px;
+            padding-left:20px;
+            padding-right:20px;
+            color:#0066ff;
+            font-size:15px;
+            font-weight:bold;
+            text-decoration:none;
+            border-left:1px solid blue;
+            border-right:1px solid blue;
+            }
+    #menuqt:hover{
+       color:red;
+       background:darkred;
+    }
+    #stylefour{
+	    position:relative;
+	    display:block;
+	    height:39px;
+	    font-size:12px;
+	    font-weight:bold;
+	    background:transparent url(img/bgOFF.gif) repeat-x top left;
+	    font-family:Arial,Verdana,Helvitica,sans-serif;
+	    border-top:4px solid #B30000;
+	    }
+
+    #stylefour ul{
+	    margin:0;
+	    padding:0;
+	    list-style-type:none;
+	    width:auto;
+	    }
+
+    #stylefour ul li{
+	    display:block;
+	    float:left;
+	    margin:0;
+	    }
+
+    #stylefour ul li a{
+	    display:block;
+	    float:left;
+	    color:#666;
+	    text-decoration:none;
+	    padding:11px 20px 0 20px;
+	    height:23px;
+	    background:transparent url(img/bgDIVIDER.gif) no-repeat top right;
+	    }
+
+    #stylefour ul li a:hover,#stylefour ul li a.current{
+	    color:#B30000;
+	    background:#fff url(img/bgON.gif) no-repeat top right;
+	    }
+    </style>
+    <script type="text/javascript">
+    function doClick(buttonName, e) {
+         var key;
+         if (window.event)
+             key = window.event.keyCode;     //IE
+         else
+             key = e.which;     //firefox
+         if (key == 13) {
+             var btn = document.getElementById(buttonName);
+             if (btn != null) {
+                 btn.click();
+                 event.keyCode = 0
+             }
+         }
+     }    
+    </script>
+</head>
+<body style="background-color: #6699FF">
+<form id="form1" runat="server">
+<div>
+   <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0px; padding:0px;">
+   <tbody>
+    <tr>
+        <td style="height:100px; text-align:center; ">
+            <asp:Label ID="Label1" runat="server" Text="Quản lý website" Font-Bold="True" 
+                ForeColor="White" Font-Size="70px" BorderColor="#6699FF"></asp:Label>
+        </td>
+    </tr>
+    <tr>
+        <td style="height:40px; background-color: #ffffff;">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+       <tbody>
+        <tr>
+            <td>
+              <!--  <asp:Button ID="Button1" runat="server" Style="padding-right: 10px; padding-left: 10px; cursor:pointer;
+                    padding-bottom: 10px; padding-top: 10px" Text="Đơn Hàng" Font-Bold="True" BorderStyle="Double" /><asp:Button ID="Button2" runat="server" Style="padding-right: 10px; padding-left: 10px;cursor:pointer;
+                    padding-bottom: 10px; padding-top: 10px" Text="Danh Mục Sản Phẩm" Font-Bold="True" /><asp:Button ID="Button3" runat="server" Style="padding-right: 10px; padding-left: 10px;cursor:pointer;
+                    padding-bottom: 10px; padding-top: 10px" Text="Sản Phẩm" Font-Bold="True" /><asp:Button ID="Button4" runat="server" Style="padding-right: 10px; padding-left: 10px;cursor:pointer;
+                    padding-bottom: 10px; padding-top: 10px" Text="Tin Tức" Font-Bold="True" /><asp:Button ID="Button5" runat="server" Style="padding-right: 10px; padding-left: 10px;cursor:pointer;
+                    padding-bottom: 10px; padding-top: 10px" Text="Tỷ Giá" Font-Bold="True" /><asp:Button ID="Button6" runat="server" Style="padding-right: 10px; padding-left: 10px;cursor:pointer;
+                    padding-bottom: 10px; padding-top: 10px" Text="Banner" Font-Bold="True" /><asp:Button ID="Button7" runat="server" Style="padding-right: 10px; padding-left: 10px;cursor:pointer;
+                    padding-bottom: 10px; padding-top: 10px" Text="Quảng Cáo" Font-Bold="True" /><asp:Button ID="Button8" runat="server" Style="padding-right: 10px; padding-left: 10px;cursor:pointer;
+                    padding-bottom: 10px; padding-top: 10px" Text="Đơn Hàng" Font-Bold="True" />-->
+                    <div id="menucase"> 
+                      <div id="stylefour"> 
+                        <ul> 
+                          <li><a href="Default.aspx" class="current" style="margin-left:20px;">Đơn Hàng</a></li> 
+                          <li><a href="Default.aspx">Danh Mục Sản Phẩm</a></li> 
+                          <li><a href="Default.aspx">Sản Phẩm</a></li> 
+                          <li><a href="Default.aspx">Tin Tức</a></li> 
+                          <li><a href="Default.aspx">Banner</a></li> 
+                        </ul> 
+                      </div> 
+                    </div> 
+                </td>
+        </tr>
+       </tbody>
+       </table>
+        </td>k 
+    </tr>
+    <tr>
+        <td>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" align="left">
+       <tbody>
+        <tr>
+            <td style=" padding-left:20px; text-align:center;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+       </tbody>
+       </table>
+        </td>
+    </tr>
+   </tbody>
+   </table>
+</div>
+</form>
+</body>
+</html>
