@@ -1,0 +1,5 @@
+D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\DTO\bin\Debug\DTO.dll
+D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\DTO\bin\Debug\DTO.pdb
+D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\DTO\obj\Debug\ResolveAssemblyReference.cache
+D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\DTO\obj\Debug\DTO.dll
+D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\DTO\obj\Debug\DTO.pdb
