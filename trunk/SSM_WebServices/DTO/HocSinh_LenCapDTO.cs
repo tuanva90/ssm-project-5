@@ -35,6 +35,12 @@ namespace DTO
             get { return _HanhKiem; }
             set { _HanhKiem = value; }
         }
+        private int _DaPhanLop;
+        public int DaPhanLop
+        {
+            get { return _DaPhanLop; }
+            set { _DaPhanLop = value; }
+        }
         //public HocSinh_LenCapDTO(string _mahs_lc, string _mahs, float _dtb, string _hanhkiem)
         //{
         //    _MaHS = _mahs;

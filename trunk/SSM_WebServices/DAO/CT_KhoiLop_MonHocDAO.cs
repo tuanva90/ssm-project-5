@@ -31,7 +31,7 @@ namespace DAO
         }
         public bool Check(string manam, string mamon, string makhoi) // kiem tra xem mot khoi hoc da chon môn hoc này hay chưa
         {
-            string sql = "select ct.CT_KLMH from CT_KHOILOP_MONHOC ct,KHOILOP_MONHOC kl where kl.MaNam=@manam and kl.MaKhoiLop=@makhoi and ct.MaMon=@mamon and ct.MaKLMH=kl.MaKLMH";
+            string sql = "select ct.CT_KLMH from CT_KHOILOP_MONHOC ct,KHOILOP_MONHOC kl, KHOILOP k where k.MaKhoiLop=kl.MaKhoiLop and k.MaNam=@manam and kl.MaKhoiLop=@makhoi and ct.MaMon=@mamon and ct.MaKLMH=kl.MaKLMH";
            // string sql = "select ct.CT_KLMH from CT_KHOILOP_MONHOC ct,KHOILOP_MONHOC kl,HOCKY hk where kl.MaNam=hk.MaNam and hk.MaHK=@mahk and kl.MaKhoiLop=@makhoi and ct.MaMon=@mamon and ct.MaKLMH=kl.MaKLMH";
             SqlParameter[] sp = new SqlParameter[3];
             sp[0] = new SqlParameter("@mamon", mamon);
@@ -45,7 +45,7 @@ namespace DAO
         }
         public int Get_MaCTKLMH(string manam, string mamon, string makhoi)
         {
-            string sql = "select ct.CT_KLMH from CT_KHOILOP_MONHOC ct,KHOILOP_MONHOC kl where kl.MaNam=@manam and kl.MaKhoiLop=@makhoi and ct.MaMon=@mamon and ct.MaKLMH=kl.MaKLMH";
+            string sql = "select ct.CT_KLMH from CT_KHOILOP_MONHOC ct,KHOILOP_MONHOC kl, KHOILOP  where k.MaKhoiLop=kl.MaKhoiLop and k.MaNam=@manam and kl.MaKhoiLop=@makhoi and ct.MaMon=@mamon and ct.MaKLMH=kl.MaKLMH";
             // string sql = "select ct.CT_KLMH from CT_KHOILOP_MONHOC ct,KHOILOP_MONHOC kl,HOCKY hk where kl.MaNam=hk.MaNam and hk.MaHK=@mahk and kl.MaKhoiLop=@makhoi and ct.MaMon=@mamon and ct.MaKLMH=kl.MaKLMH";
             SqlParameter[] sp = new SqlParameter[3];
             sp[0] = new SqlParameter("@mamon", mamon);
@@ -56,7 +56,7 @@ namespace DAO
         }
         public DataTable List_MH_KL(string manam, string makhoi) // lay danh sach mon hoc cua tung khoi lop
         {
-            string sql = "select ctklmh.CT_KLMH,mh.TenMon as 'Tên môn',mh.MaMon as 'Mã môn' from CT_KHOILOP_MONHOC ctklmh, KHOILOP_MONHOC klmh, MONHOC mh where mh.MaMon=ctklmh.MaMon and ctklmh.MaKLMH = klmh.MaKLMH and klmh.MaNam=@manam and klmh.MaKhoiLop=@makhoi";
+            string sql = "select ctklmh.CT_KLMH,mh.TenMon as 'Tên môn',mh.MaMon as 'Mã môn' from CT_KHOILOP_MONHOC ctklmh, KHOILOP_MONHOC klmh, MONHOC mh, KHOILOP kl where kl.MaKhoiLop = klmh.MaKhoiLop and mh.MaMon=ctklmh.MaMon and ctklmh.MaKLMH = klmh.MaKLMH and kl.MaNam=@manam and klmh.MaKhoiLop=@makhoi";
             //string sql = "select ctklmh.CT_KLMH from CT_KHOILOP_MONHOC ctklmh, KHOILOP_MONHOC klmh, HOCKY hk where ctklmh.MaKLMH=klmh.MaKLMH and klmh.MaNam=hk.MaNam and hk.MaHK=@mahk and klmh.MaKHOILOP=@MaKhoi";
             SqlParameter[] sp = new SqlParameter[2];
              sp[0] = new SqlParameter("@manam", manam);

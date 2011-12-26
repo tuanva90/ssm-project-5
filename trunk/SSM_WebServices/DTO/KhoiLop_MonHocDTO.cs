@@ -14,13 +14,7 @@ namespace DTO
             get { return _MaKLMH; }
             set { _MaKLMH = value; }
         }
-        private string _MaNam;
-
-        public string MaNam
-        {
-            get { return _MaNam; }
-            set { _MaNam = value; }
-        }
+     
         private string _MaKL;
 
         public string MaKL

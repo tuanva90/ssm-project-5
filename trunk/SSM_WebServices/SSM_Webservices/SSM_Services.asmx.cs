@@ -26,7 +26,7 @@ public class SSM_Services : System.Web.Services.WebService
         //Uncomment the following line if using designed components 
         //InitializeComponent(); 
     }
-    
+
     #region DTO
     [WebMethod]
     public ToDTO todto()
@@ -180,30 +180,30 @@ public class SSM_Services : System.Web.Services.WebService
     {
         return mhdao.getMaMon();
     }
-     [WebMethod]
+    [WebMethod]
     public DataTable MonHoc_ListbyMaNam_MaLop(string manam, string malop)
     {
         return mhdao.ListbyMaNam_MaLop(manam, malop);
     }
-     [WebMethod]
-     public bool MonHoc_checkTrungtenmon(string monhoc)
-     {
-         DataTable dt = mhdao.List();
-         bool result = false;
-         for (int i = 0; i < dt.Rows.Count; i++)
-         {
-             if (dt.Rows[i]["Tên môn"].ToString() == monhoc)
-             {
-                 result = true;
-                 break;
-             }
-         }
-         return result;
-     }
+    [WebMethod]
+    public bool MonHoc_checkTrungtenmon(string monhoc)
+    {
+        DataTable dt = mhdao.List();
+        bool result = false;
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            if (dt.Rows[i]["Tên môn"].ToString() == monhoc)
+            {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
     #endregion
 
-     #region Cac ham xu ly Lop (LopDAO)
-     Lop_DAO lopdao = new Lop_DAO();
+    #region Cac ham xu ly Lop (LopDAO)
+    Lop_DAO lopdao = new Lop_DAO();
     [WebMethod]
     public int Lop_Insert(LopDTO lop)
     {
@@ -240,15 +240,25 @@ public class SSM_Services : System.Web.Services.WebService
         return lopdao.Delete(malop);
     }
     [WebMethod]
-    public string Lop_SearchMakl(string malop)
+    public string Lop_SearchMakl(string malop, string manam)
     {
-        return lopdao.SearchMakl(malop);
+        return lopdao.SearchMakl(malop, manam);
     }
     [WebMethod]
     public DataTable Lop_ListbyNamHoc(string namhoc)
     {
         return lopdao.ListbyNamHoc(namhoc);
     }
+
+//Create by TuanVA
+
+    [WebMethod]
+    public DataTable Lop_ListbyKhoiLop(string makhoilop)
+    {
+        return lopdao.ListbyMaKhoi(makhoilop);
+    }
+
+//End by TuanVA
     [WebMethod]
     public string Lop_getTenLop(string malop)
     {
@@ -268,7 +278,7 @@ public class SSM_Services : System.Web.Services.WebService
         {
             if (dt.Rows[k]["Tên lớp"].ToString() == tenlop)
             {
-                result= true;
+                result = true;
                 break;
             }
         }
@@ -294,6 +304,11 @@ public class SSM_Services : System.Web.Services.WebService
         return kldao.List();
     }
     [WebMethod]
+    public DataTable KLop_ListByMaNam(string manam)
+    {
+        return kldao.ListbyMaNam(manam);
+    }
+    [WebMethod]
     public int KLop_Delete(string mkl)
     {
         return kldao.Delete(mkl);
@@ -308,10 +323,15 @@ public class SSM_Services : System.Web.Services.WebService
     {
         return kldao.Updatesolop(solop, makl);
     }
+    [WebMethod]
+    public string KLop_getMaKLbyMaNam(string manam)
+    {
+        return kldao.get_MaKhoi(manam);
+    }
     #endregion
 
     #region Cac ham xu ly NamHoc ( NamHocDAO)
-        NamHoc_DAO nhdao = new NamHoc_DAO();
+    NamHoc_DAO nhdao = new NamHoc_DAO();
     [WebMethod] // them vao nam hoc moi
     public int NamHoc_Insert(NamHocDTO nh)
     {
@@ -425,11 +445,52 @@ public class SSM_Services : System.Web.Services.WebService
     {
         return hsdao.getMahs(ma);
     }
-    [WebMethod] 
+    [WebMethod]
     public DataTable HocSinh_HSchuaphanlop(string manam) // lay danh sach hoc sinh chua duoc phan lop theo nam hoc
     {
         return hsdao.HSchuaphanlop(manam);
     }
+
+    //Create TuanVA
+
+    [WebMethod]
+    public DataTable HocSinh_listHSDuocLenLop(string MaKhoiLop_Cu) // lay danh sach hoc sinh dc len lop theo nam hoc cu
+    {
+        return hsdao.listHSDuocLenLop(MaKhoiLop_Cu);
+    }
+
+    [WebMethod]
+    public DataTable HocSinh_listHSLuBan(string MaKhoiLop_Cu) // lay danh sach hoc sinh luu ban theo nam hoc cu
+    {
+        return hsdao.listHSLuuBan(MaKhoiLop_Cu);
+    }
+
+    [WebMethod]
+    public int HocSinh_PhanLopThuCong(string MaHS, string MaLop) // Phan lop thu cong cho tung HS theo Lop
+    {
+        return hsdao.PhanLopThuCong(MaHS, MaLop);
+    }
+
+    [WebMethod]
+    public int HocSinh_PhanLopTuDong(string MaLop_cu, string MaLop_moi) // Phan lop tu dong
+    {
+        return hsdao.PhanLopTuDong(MaLop_cu, MaLop_moi);
+    }
+
+    [WebMethod]
+    public int HocSinh_ChuyenLop(string MaHS, string MaLop_cu, string MaLop_moi) // Chuyen lop
+    {
+        return hsdao.ChuyenLop(MaHS, MaLop_cu, MaLop_moi);
+    }
+
+    [WebMethod]
+    public bool HocSinh_KiemTraLenLop(string MaHS, string MaNam) // Kiem tra HS co duoc len lop hay ko
+    {
+        return hsdao.KiemTraLenLop(MaHS, MaNam);
+    }
+
+
+
     [WebMethod] // lay danh sach taat ca hoc sinh
     public DataTable HocSinh_List()
     {
@@ -441,6 +502,73 @@ public class SSM_Services : System.Web.Services.WebService
         return hsdao.getHoTen(mahs);
     }
     #endregion
+
+    #region HocSinh_LenCapDAO
+    HocSinh_LenCap_DAO hs_lcdao = new HocSinh_LenCap_DAO();
+    [WebMethod]
+    public DataTable HocSinh_LenCap_List()
+    {
+        return hs_lcdao.List();
+    }
+
+    [WebMethod]
+    public int HocSinh_LenCap_ThemMoi(string MaHS, string HoTen, int GioiTinh, string SoDienThoai, string HoTenCha, string NgheNghiepCha, string HoTenMe, string NgheNghiepMe, string NgaySinh, string DiaChi, float DTB, string HanhKiem)
+    {
+        HocSinhDTO Hs = new HocSinhDTO();
+        Hs.MaHS = MaHS;
+        Hs.HoTen = HoTen;
+        Hs.GioiTinh = GioiTinh;
+        Hs.SoDienThoai = SoDienThoai;
+        Hs.HoTenCha = HoTenCha;
+        Hs.NgheNghiepCha = NgheNghiepCha;
+        Hs.HoTenMe = HoTenMe;
+        Hs.NgheNghiepMe = NgheNghiepMe;
+        Hs.NgaySinh = NgaySinh;
+        Hs.DiaChi = DiaChi;
+        int kq = hsdao.Insert(Hs);
+
+        HocSinh_LenCapDTO Hs_lc = new HocSinh_LenCapDTO();
+        Hs_lc.MaHS_LC = MaHS;
+        Hs_lc.MaHS = MaHS;
+        Hs_lc.DTB = (float)Math.Round(DTB, 2);
+        Hs_lc.HanhKiem = HanhKiem;
+        Hs_lc.DaPhanLop = 1;
+        kq = hs_lcdao.Insert(Hs_lc);
+        return kq;
+    }
+
+    [WebMethod]
+    public int HocSinh_LenCap_Insert(HocSinh_LenCapDTO Hs_lc)
+    {
+        return hs_lcdao.Insert(Hs_lc);
+    }
+
+    [WebMethod]
+    public int HocSinh_LenCap_Update(HocSinh_LenCapDTO Hs_lc)
+    {
+        return hs_lcdao.Update(Hs_lc);
+    }
+
+    [WebMethod]
+    public int HocSinh_LenCap_PhanLopTuDong_getsiso(string makhoilop)
+    {
+        return hs_lcdao.PhanLopTuDong_getsiso(makhoilop);
+    }
+
+    [WebMethod]
+    public int HocSinh_LenCap_PhanLopTuDong(string manam, string makhoilop)
+    {
+        return hs_lcdao.PhanLopTuDong(manam, makhoilop);
+    }
+
+    [WebMethod]
+    public int HocSinh_LenCap_PhanLopThuCong(string MaHS, string MaLop)
+    {
+        return hs_lcdao.PhanLopThuCong(MaHS, MaLop);
+    }
+
+    #endregion
+    //END BY TUANVA
 
     #region Cac ham xu ly GiaoVien (GiaoVienDAO)
     GiaoVien_DAO gvdao = new GiaoVien_DAO();
@@ -529,7 +657,7 @@ public class SSM_Services : System.Web.Services.WebService
     {
         return hocdao.getMaHoc(mahs, malop, mahk);
     }
-   [WebMethod]
+    [WebMethod]
     public int Hoc_Delete(string mahoc)
     {
         return hocdao.Delete(mahoc);
@@ -547,12 +675,12 @@ public class SSM_Services : System.Web.Services.WebService
     [WebMethod] // lay diem cuoi ki
     public string Hoc_getHKCuoiKy(string mahs, string malop, string manam, string tenhk)
     {
-        return hocdao.getHKCuoiKy(mahs, malop,manam,tenhk);
+        return hocdao.getHKCuoiKy(mahs, malop, manam, tenhk);
     }
     [WebMethod] // lay diem cuoi ki
     public float Hoc_getDiemCK(string mahs, string malop, string manam, string tenhk)
     {
-        return hocdao.getDiemCuoiKy(mahs, malop, manam,tenhk);
+        return hocdao.getDiemCuoiKy(mahs, malop, manam, tenhk);
     } // lay diem cuoi ki , hanh kiem cuoi ki
     [WebMethod]
     public DataTable Hoc_getDCK_HKCK(string manam, string tenhk, string malop)
@@ -591,7 +719,7 @@ public class SSM_Services : System.Web.Services.WebService
     [WebMethod]
     public int BDM_HK_UpdateDiemTB(int mahoc, int ctbdmhk, float diem)
     {
-        return bdmhkdao.UpdateDiemTBM(mahoc,ctbdmhk, diem);
+        return bdmhkdao.UpdateDiemTBM(mahoc, ctbdmhk, diem);
     }
     [WebMethod]
     public int BDM_HK_UpdateDiemTBM_KT(int mahoc, int ctbdmhk, float diem)
@@ -624,7 +752,7 @@ public class SSM_Services : System.Web.Services.WebService
         return bdmhkdao.GetDiemTBM_HK(mahoc, ct_klmh);
     }
     #endregion
-    
+
     #region Cac ham xu ly CT_BDM_HK (CT_BDM_HKDAO)
     CT_BDM_HK_DAO ctbdmhkdao = new CT_BDM_HK_DAO();
     [WebMethod]
@@ -637,10 +765,10 @@ public class SSM_Services : System.Web.Services.WebService
     {
         return ctbdmhkdao.Update(bd);
     }
-   [WebMethod] // lấy maBDM theo ma hoc va mactklmh
+    [WebMethod] // lấy maBDM theo ma hoc va mactklmh
     public int CT_BDM_HK_GetMaBDM(int mahoc, int ctklmh)
     {
-        return ctbdmhkdao.GetMaBDM_HK(mahoc,ctklmh);
+        return ctbdmhkdao.GetMaBDM_HK(mahoc, ctklmh);
     }
     [WebMethod]
     public int CT_BDM_HK_Delete(int mahoc, int ctklmh)
@@ -655,7 +783,7 @@ public class SSM_Services : System.Web.Services.WebService
     [WebMethod]
     public DataTable CT_BDM_HK_List(string mahk, string malop, string mamon)
     {
-        return ctbdmhkdao.List(mahk,malop,mamon);
+        return ctbdmhkdao.List(mahk, malop, mamon);
     }
     [WebMethod]
     public int CT_KL_HK_UpdateDiemHK(int mahoc, int ctklmh, float diem)
@@ -665,16 +793,16 @@ public class SSM_Services : System.Web.Services.WebService
     #endregion
 
     #region Cac ham xu ly KL_Mon ( KhoiLop_MonDAO)
-     KhoiLop_MonHocDAO kl_mondao = new KhoiLop_MonHocDAO();
+    KhoiLop_MonHocDAO kl_mondao = new KhoiLop_MonHocDAO();
     [WebMethod]
     public int KhoiLop_Mon_Insert(string manam, string makhoi)
     {
-        return kl_mondao.Insert(manam, makhoi);
+        return kl_mondao.Insert(makhoi);
     }
     [WebMethod]
     public int KhoiLop_Mon_Delete(string manam, string makhoi)
     {
-        return kl_mondao.Delete(manam, makhoi);
+        return kl_mondao.Delete(makhoi);
     }
     [WebMethod]
     public int KhoiLop_Mon_GetMa(string manam, string makhoi)
@@ -715,7 +843,7 @@ public class SSM_Services : System.Web.Services.WebService
     {
         return ctklm.Get_MaCTKLMH(manam, mamon, makl);
     }
-     #endregion 
+    #endregion
 
     #region Cac ham xu ly TKnam (TKNAMDAO)
     TKNam_DAO tknamdao = new TKNam_DAO();
@@ -748,7 +876,7 @@ public class SSM_Services : System.Web.Services.WebService
     public string TKN_get_HKCuoiNam(string manam, string mahs)
     {
         return tknamdao.get_HKCuoiNam(manam, mahs);
-            }
+    }
     [WebMethod]
     public float TKN_get_DiemCuoiNam(string manam, string mahs)
     {
