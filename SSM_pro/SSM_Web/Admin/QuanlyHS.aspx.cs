@@ -51,7 +51,11 @@ public partial class Admin_Default2 : System.Web.UI.Page
         hsdto.DiaChi = txtdiachi.Text.ToString();
         hsdto.NgaySinh = txtDate.Text.ToString();
         if (hsbus.UpdateHS(hsdto) > 0)
-            Response.Redirect("QuanlyHS.aspx");
+        {
+            Response.Write("<script>alert('Sửa  thành công !')</script>");
+           // Response.Redirect("QuanlyHS.aspx");
+        }
+
        
     }
     protected void btnCancel_Click(object sender, EventArgs e)
@@ -72,6 +76,7 @@ public partial class Admin_Default2 : System.Web.UI.Page
     protected void lbtnEdit_Click(object sender, EventArgs e)
     {
         MultiView3.ActiveViewIndex = 0;
+        MultiView2.ActiveViewIndex = -1;
         DataTable dt = hsbus.HocSinhMaHS_Full(Session["index"].ToString());
         lblmahs.Text = dt.Rows[0][0].ToString();
         txthoten.Text = dt.Rows[0][1].ToString();
