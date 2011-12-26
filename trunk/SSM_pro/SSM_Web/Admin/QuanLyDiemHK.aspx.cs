@@ -30,9 +30,9 @@ public partial class Admin_QuanLyDiemHK : System.Web.UI.Page
                 // ddllop.DataSource = sv.Lop_List();
                 ddllop.DataSource = sv.Lop_ListbyNamHoc(ddnamhoc.SelectedValue.ToString());
                 ddllop.DataBind();
-                ddlmonhoc.DataSource = sv.CT_KL_MH_List_MH_KL(ddnamhoc.SelectedValue.ToString(), sv.Lop_SearchMakl(ddllop.SelectedValue.ToString()));
+                ddlmonhoc.DataSource = sv.CT_KL_MH_List_MH_KL(ddnamhoc.SelectedValue.ToString(), sv.Lop_SearchMakl(ddllop.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString()));
                 ddlmonhoc.DataBind();
-                gvhocsinh.DataSource = sv.CT_BDM_HK_List(ddlhk.SelectedValue.ToString(), ddllop.SelectedValue.ToString(), ddlmonhoc.SelectedValue.ToString());
+                gvhocsinh.DataSource = AutoNumberedTable(sv.CT_BDM_HK_List(ddlhk.SelectedValue.ToString(), ddllop.SelectedValue.ToString(), ddlmonhoc.SelectedValue.ToString()));
                 gvhocsinh.DataBind();
                 Display();
             }
@@ -42,6 +42,25 @@ public partial class Admin_QuanLyDiemHK : System.Web.UI.Page
             }
         }
     }
+    private DataTable AutoNumberedTable(DataTable SourceTable)
+    {
+
+        DataTable ResultTable = new DataTable();
+        DataColumn AutoNumberColumn = new DataColumn(); AutoNumberColumn.ColumnName = "STT";
+
+        AutoNumberColumn.DataType = typeof(int);
+        AutoNumberColumn.AutoIncrement = true;
+
+        AutoNumberColumn.AutoIncrementSeed = 1;
+
+        AutoNumberColumn.AutoIncrementStep = 1;
+
+        ResultTable.Columns.Add(AutoNumberColumn);
+
+        ResultTable.Merge(SourceTable);
+        return ResultTable;
+
+    }  
     public void Display()
     {
         int mahoc;
@@ -51,7 +70,7 @@ public partial class Admin_QuanLyDiemHK : System.Web.UI.Page
             Label mahs = (Label)gvr.FindControl("lblmahs");
             TextBox diemhk = (TextBox)gvr.FindControl("txtdiemhk");
             mahoc = int.Parse(sv.Hoc_GetMaHoc(mahs.Text.ToString(), ddllop.SelectedValue.ToString(), ddlhk.SelectedValue.ToString()));
-            mactklmh = sv.CT_KL_MH_GetMaCTKLMH(ddlmonhoc.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString(), sv.Lop_SearchMakl(ddllop.SelectedValue.ToString())); 
+            mactklmh = sv.CT_KL_MH_GetMaCTKLMH(ddlmonhoc.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString(), sv.Lop_SearchMakl(ddllop.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString())); 
             Label diemtbkt = (Label)gvr.FindControl("lbldiemtbkt");
             Label diemtbhk = (Label)gvr.FindControl("lbldiemtb");
             diemtbhk.Text = sv.BDM_HK_getDiemTBM_HK(mahoc, mactklmh).ToString();
@@ -110,7 +129,7 @@ public partial class Admin_QuanLyDiemHK : System.Web.UI.Page
             Label mahs = (Label)gvr.FindControl("lblmahs");
             TextBox diemhk = (TextBox)gvr.FindControl("txtdiemhk");
              mahoc = int.Parse(sv.Hoc_GetMaHoc(mahs.Text.ToString(),ddllop.SelectedValue.ToString(),ddlhk.SelectedValue.ToString()));
-            mactklmh = sv.CT_KL_MH_GetMaCTKLMH(ddlmonhoc.SelectedValue.ToString(),ddnamhoc.SelectedValue.ToString(),sv.Lop_SearchMakl(ddllop.SelectedValue.ToString())); 
+            mactklmh = sv.CT_KL_MH_GetMaCTKLMH(ddlmonhoc.SelectedValue.ToString(),ddnamhoc.SelectedValue.ToString(),sv.Lop_SearchMakl(ddllop.SelectedValue.ToString(),ddnamhoc.SelectedValue.ToString())); 
             ctbdmhkdto.MaBD_HK = sv.BDM_HK_GetMaBDMHK(mahoc,mactklmh);
             ctbdmhkdto.Diem15Phut = diem15p.Text.ToString();
             ctbdmhkdto.DiemMieng = diemmieng.Text.ToString();
@@ -133,7 +152,7 @@ public partial class Admin_QuanLyDiemHK : System.Web.UI.Page
             _diemhk = 0;
             Label mahs = (Label)gvr.FindControl("lblmahs");
             mahoc = int.Parse(sv.Hoc_GetMaHoc(mahs.Text.ToString(), ddllop.SelectedValue.ToString(), ddlhk.SelectedValue.ToString()));
-            mactklmh = sv.CT_KL_MH_GetMaCTKLMH(ddlmonhoc.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString(), sv.Lop_SearchMakl(ddllop.SelectedValue.ToString()));
+            mactklmh = sv.CT_KL_MH_GetMaCTKLMH(ddlmonhoc.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString(), sv.Lop_SearchMakl(ddllop.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString()));
             TextBox diemhk = (TextBox)gvr.FindControl("txtdiemhk");
             Label diemtbkt = (Label)gvr.FindControl("lbldiemtbkt");
             mahoc = int.Parse(sv.Hoc_GetMaHoc(mahs.Text.ToString(), ddllop.SelectedValue.ToString(), ddlhk.SelectedValue.ToString()));
@@ -158,7 +177,7 @@ public partial class Admin_QuanLyDiemHK : System.Web.UI.Page
             count = 0;
             Label mahs = (Label)gvr.FindControl("lblmahs");
             mahoc = int.Parse(sv.Hoc_GetMaHoc(mahs.Text.ToString(), ddllop.SelectedValue.ToString(), ddlhk.SelectedValue.ToString()));
-            mactklmh = sv.CT_KL_MH_GetMaCTKLMH(ddlmonhoc.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString(), sv.Lop_SearchMakl(ddllop.SelectedValue.ToString()));
+            mactklmh = sv.CT_KL_MH_GetMaCTKLMH(ddlmonhoc.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString(), sv.Lop_SearchMakl(ddllop.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString()));
             TextBox diem15p = (TextBox)gvr.FindControl("txtdiem15p");
             TextBox diemmieng = (TextBox)gvr.FindControl("txtdiemmieng");
             TextBox diem1tiet = (TextBox)gvr.FindControl("txtdiem1tiet");

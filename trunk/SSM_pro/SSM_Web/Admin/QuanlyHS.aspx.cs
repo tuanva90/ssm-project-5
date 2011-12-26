@@ -120,6 +120,7 @@ public partial class Admin_Default2 : System.Web.UI.Page
     {
         Session["MaHS"] = lblmahs.Text.ToString();
         Response.Redirect("TKCuoiKy_HocSinh.aspx");
+
         
         //Findow.open("TKCuoiKy_HocSinh.aspx", "Window1", "menubar=no,width=430,height=360,toolbar=no"); 
       

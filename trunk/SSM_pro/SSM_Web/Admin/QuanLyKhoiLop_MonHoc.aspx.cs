@@ -27,8 +27,8 @@ public partial class Admin_QuanLyKhoiLop_MonHoc : System.Web.UI.Page
         {
             ddnamhoc.DataSource = nhbus.List();
             ddnamhoc.DataBind();
-            ddlkhoilop.DataSource = klbus.List();
-          ddlkhoilop.DataBind();
+            ddlkhoilop.DataSource = sv.KLop_ListByMaNam(ddnamhoc.SelectedValue.ToString()); ;
+             ddlkhoilop.DataBind();
             gvphanmon.DataSource = mhbus.List();
             gvphanmon.DataBind();
                   Display();

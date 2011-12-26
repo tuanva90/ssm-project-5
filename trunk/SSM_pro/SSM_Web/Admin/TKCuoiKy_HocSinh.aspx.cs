@@ -31,7 +31,7 @@ public partial class Admin_TKCuoiKy_HocSinh : System.Web.UI.Page
             }
             catch
             {
-                lblhanhkiem.Text = " Không tìm thấy kết quả nào!";
+                //lblhanhkiem.Text = " Không tìm thấy kết quả nào!";
             }
         }
 
@@ -89,25 +89,15 @@ public partial class Admin_TKCuoiKy_HocSinh : System.Web.UI.Page
     }
     protected void ddnamhoc_SelectedIndexChanged(object sender, EventArgs e)
     {
-        try
-        {
+       
             Display();
-        }
-        catch
-        {
-            lblhanhkiem.Text = " Không tìm thấy kết quả nào!";
-        }
+        
     }
     protected void ddlhk_SelectedIndexChanged(object sender, EventArgs e)
     {
-        try
-        {
+       
             Display();
-        }
-        catch
-        {
-            lblhanhkiem.Text = " Không tìm thấy kết quả nào!";
-        }
+       
     }
 
 protected void  gvtongket_PageIndexChanging(object sender, GridViewPageEventArgs e)

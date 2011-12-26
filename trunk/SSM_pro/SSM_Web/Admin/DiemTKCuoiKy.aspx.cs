@@ -71,7 +71,7 @@ public partial class Admin_DiemTKCuoiKy : System.Web.UI.Page
             _diem = 0;
             _heso = 0;
              Label mahs = (Label)grv.FindControl("lblmahs");
-             DataTable dt = sv.BDM_HK_getDiemCacMon(ddnamhoc.SelectedValue.ToString(), tenhk, sv.Lop_SearchMakl(ddllop.SelectedValue.ToString()), mahs.Text.ToString());
+             DataTable dt = sv.BDM_HK_getDiemCacMon(ddnamhoc.SelectedValue.ToString(), tenhk, sv.Lop_SearchMakl(ddllop.SelectedValue.ToString(), ddnamhoc.SelectedValue.ToString()), mahs.Text.ToString());
              for (int i = 0; i < dt.Rows.Count; i++)
              {
                  _diem += float.Parse(dt.Rows[i]["DTBMon_HK"].ToString()) * int.Parse(dt.Rows[i]["HeSo"].ToString());

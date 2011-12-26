@@ -2,6 +2,281 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CT_KL_Mon_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mamon" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="makl_mon" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CT_KL_Mon_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CT_KL_Mon_DeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CT_KL_MH_Check">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="makhoi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mamon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CT_KL_MH_CheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CT_KL_MH_CheckResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CT_KL_MH_List_MH_KL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="makhoi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CT_KL_MH_List_MH_KLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CT_KL_MH_List_MH_KLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CT_KL_MH_Get_MaNam_MaKhoi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mamon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CT_KL_MH_Get_MaNam_MaKhoiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CT_KL_MH_Get_MaNam_MaKhoiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CT_KL_MH_GetMaCTKLMH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mamon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="makl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CT_KL_MH_GetMaCTKLMHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CT_KL_MH_GetMaCTKLMHResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKNam_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tkn" type="tns:TKNAMDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TKNAMDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MaTKN" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiemCuoiNam" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="HKCuoiNam" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaNam" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TKNam_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TKNam_InsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKNam_UpdateDiemCuoiNam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="diemcuoinam" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKNam_UpdateDiemCuoiNamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TKNam_UpdateDiemCuoiNamResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKNam_UpdateHKCuoiNam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hkcuoinam" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKNam_UpdateHKCuoiNamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TKNam_UpdateHKCuoiNamResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKNam_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKNam_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TKNam_DeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKNam_GetMaBTKN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKNam_GetMaBTKNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TKNam_GetMaBTKNResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKN_get_HKCuoiNam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKN_get_HKCuoiNamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TKN_get_HKCuoiNamResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKN_get_DiemCuoiNam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TKN_get_DiemCuoiNamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TKN_get_DiemCuoiNamResult" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChucVu_checkTrungtenchucvu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tenchucvu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChucVu_checkTrungtenchucvuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChucVu_checkTrungtenchucvuResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_searchbyTen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ten" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_searchbyTenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_searchbyTenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_SearchbyMa_FULL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_SearchbyMa_FULLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_SearchbyMa_FULLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_getMa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ma" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_getMaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_getMaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="HocSinh_HSchuaphanlop">
         <s:complexType>
           <s:sequence>
@@ -20,6 +295,109 @@
                 </s:sequence>
               </s:complexType>
             </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_listHSDuocLenLop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaKhoiLop_Cu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_listHSDuocLenLopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_listHSDuocLenLopResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_listHSLuBan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaKhoiLop_Cu" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_listHSLuBanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_listHSLuBanResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_PhanLopThuCong">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaLop" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_PhanLopThuCongResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_PhanLopThuCongResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_PhanLopTuDong">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaLop_cu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaLop_moi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_PhanLopTuDongResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_PhanLopTuDongResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_ChuyenLop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaLop_cu" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaLop_moi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_ChuyenLopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_ChuyenLopResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_KiemTraLenLop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaNam" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_KiemTraLenLopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_KiemTraLenLopResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -51,6 +429,129 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="HocSinh_getHoTenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_List">
+        <s:complexType />
+      </s:element>
+      <s:element name="HocSinh_LenCap_ListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_LenCap_ListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_ThemMoi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoTen" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GioiTinh" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SoDienThoai" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoTenCha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NgheNghiepCha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoTenMe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NgheNghiepMe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NgaySinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DTB" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="HanhKiem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_ThemMoiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_ThemMoiResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hs_lc" type="tns:HocSinh_LenCapDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HocSinh_LenCapDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MaHS_LC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DTB" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="HanhKiem" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DaPhanLop" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HocSinh_LenCap_InsertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_InsertResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hs_lc" type="tns:HocSinh_LenCapDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_UpdateResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_PhanLopTuDong_getsiso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="makhoilop" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_PhanLopTuDong_getsisoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_PhanLopTuDong_getsisoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_PhanLopTuDong">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="makhoilop" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_PhanLopTuDongResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_PhanLopTuDongResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_PhanLopThuCong">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaLop" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_PhanLopThuCongResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_PhanLopThuCongResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -842,225 +1343,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="CT_KL_Mon_Delete">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="mamon" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="makl_mon" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CT_KL_Mon_DeleteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="CT_KL_Mon_DeleteResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CT_KL_MH_Check">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="makhoi" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mamon" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CT_KL_MH_CheckResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="CT_KL_MH_CheckResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CT_KL_MH_List_MH_KL">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="makhoi" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CT_KL_MH_List_MH_KLResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CT_KL_MH_List_MH_KLResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CT_KL_MH_Get_MaNam_MaKhoi">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="mamon" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CT_KL_MH_Get_MaNam_MaKhoiResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CT_KL_MH_Get_MaNam_MaKhoiResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CT_KL_MH_GetMaCTKLMH">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="mamon" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="makl" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="CT_KL_MH_GetMaCTKLMHResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="CT_KL_MH_GetMaCTKLMHResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKNam_Insert">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="tkn" type="tns:TKNAMDTO" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="TKNAMDTO">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="MaTKN" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="DiemCuoiNam" type="s:float" />
-          <s:element minOccurs="0" maxOccurs="1" name="HKCuoiNam" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="MaNam" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="TKNam_InsertResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="TKNam_InsertResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKNam_UpdateDiemCuoiNam">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="diemcuoinam" type="s:float" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKNam_UpdateDiemCuoiNamResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="TKNam_UpdateDiemCuoiNamResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKNam_UpdateHKCuoiNam">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="hkcuoinam" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKNam_UpdateHKCuoiNamResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="TKNam_UpdateHKCuoiNamResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKNam_Delete">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKNam_DeleteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="TKNam_DeleteResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKNam_GetMaBTKN">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKNam_GetMaBTKNResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="TKNam_GetMaBTKNResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKN_get_HKCuoiNam">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKN_get_HKCuoiNamResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="TKN_get_HKCuoiNamResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKN_get_DiemCuoiNam">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="TKN_get_DiemCuoiNamResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="TKN_get_DiemCuoiNamResult" type="s:float" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ChucVu_checkTrungtenchucvu">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="tenchucvu" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ChucVu_checkTrungtenchucvuResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="ChucVu_checkTrungtenchucvuResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="todto">
         <s:complexType />
       </s:element>
@@ -1162,6 +1444,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="MaKhoiLop" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="TenKhoiLop" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="SoLop" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaNam" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="namhocdto">
@@ -1615,6 +1898,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="malop" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1636,6 +1920,27 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="Lop_ListbyNamHocResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lop_ListbyKhoiLop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="makhoilop" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lop_ListbyKhoiLopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lop_ListbyKhoiLopResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -1719,6 +2024,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="KLop_ListByMaNam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KLop_ListByMaNamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KLop_ListByMaNamResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="KLop_Delete">
         <s:complexType>
           <s:sequence>
@@ -1755,6 +2081,20 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="KLop_UpdateSoLopResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KLop_getMaKLbyMaNam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KLop_getMaKLbyMaNamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KLop_getMaKLbyMaNamResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1992,69 +2332,145 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="HocSinh_searchbyTen">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ten" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="HocSinh_searchbyTenResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_searchbyTenResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="HocSinh_SearchbyMa_FULL">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="mahs" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="HocSinh_SearchbyMa_FULLResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_SearchbyMa_FULLResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="HocSinh_getMa">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ma" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="HocSinh_getMaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_getMaResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="CT_KL_Mon_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:CT_KL_Mon_Delete" />
+  </wsdl:message>
+  <wsdl:message name="CT_KL_Mon_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:CT_KL_Mon_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CT_KL_MH_CheckSoapIn">
+    <wsdl:part name="parameters" element="tns:CT_KL_MH_Check" />
+  </wsdl:message>
+  <wsdl:message name="CT_KL_MH_CheckSoapOut">
+    <wsdl:part name="parameters" element="tns:CT_KL_MH_CheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="CT_KL_MH_List_MH_KLSoapIn">
+    <wsdl:part name="parameters" element="tns:CT_KL_MH_List_MH_KL" />
+  </wsdl:message>
+  <wsdl:message name="CT_KL_MH_List_MH_KLSoapOut">
+    <wsdl:part name="parameters" element="tns:CT_KL_MH_List_MH_KLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CT_KL_MH_Get_MaNam_MaKhoiSoapIn">
+    <wsdl:part name="parameters" element="tns:CT_KL_MH_Get_MaNam_MaKhoi" />
+  </wsdl:message>
+  <wsdl:message name="CT_KL_MH_Get_MaNam_MaKhoiSoapOut">
+    <wsdl:part name="parameters" element="tns:CT_KL_MH_Get_MaNam_MaKhoiResponse" />
+  </wsdl:message>
+  <wsdl:message name="CT_KL_MH_GetMaCTKLMHSoapIn">
+    <wsdl:part name="parameters" element="tns:CT_KL_MH_GetMaCTKLMH" />
+  </wsdl:message>
+  <wsdl:message name="CT_KL_MH_GetMaCTKLMHSoapOut">
+    <wsdl:part name="parameters" element="tns:CT_KL_MH_GetMaCTKLMHResponse" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:TKNam_Insert" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:TKNam_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_UpdateDiemCuoiNamSoapIn">
+    <wsdl:part name="parameters" element="tns:TKNam_UpdateDiemCuoiNam" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_UpdateDiemCuoiNamSoapOut">
+    <wsdl:part name="parameters" element="tns:TKNam_UpdateDiemCuoiNamResponse" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_UpdateHKCuoiNamSoapIn">
+    <wsdl:part name="parameters" element="tns:TKNam_UpdateHKCuoiNam" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_UpdateHKCuoiNamSoapOut">
+    <wsdl:part name="parameters" element="tns:TKNam_UpdateHKCuoiNamResponse" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:TKNam_Delete" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:TKNam_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_GetMaBTKNSoapIn">
+    <wsdl:part name="parameters" element="tns:TKNam_GetMaBTKN" />
+  </wsdl:message>
+  <wsdl:message name="TKNam_GetMaBTKNSoapOut">
+    <wsdl:part name="parameters" element="tns:TKNam_GetMaBTKNResponse" />
+  </wsdl:message>
+  <wsdl:message name="TKN_get_HKCuoiNamSoapIn">
+    <wsdl:part name="parameters" element="tns:TKN_get_HKCuoiNam" />
+  </wsdl:message>
+  <wsdl:message name="TKN_get_HKCuoiNamSoapOut">
+    <wsdl:part name="parameters" element="tns:TKN_get_HKCuoiNamResponse" />
+  </wsdl:message>
+  <wsdl:message name="TKN_get_DiemCuoiNamSoapIn">
+    <wsdl:part name="parameters" element="tns:TKN_get_DiemCuoiNam" />
+  </wsdl:message>
+  <wsdl:message name="TKN_get_DiemCuoiNamSoapOut">
+    <wsdl:part name="parameters" element="tns:TKN_get_DiemCuoiNamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChucVu_checkTrungtenchucvuSoapIn">
+    <wsdl:part name="parameters" element="tns:ChucVu_checkTrungtenchucvu" />
+  </wsdl:message>
+  <wsdl:message name="ChucVu_checkTrungtenchucvuSoapOut">
+    <wsdl:part name="parameters" element="tns:ChucVu_checkTrungtenchucvuResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_searchbyTenSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_searchbyTen" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_searchbyTenSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_searchbyTenResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_SearchbyMa_FULLSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_SearchbyMa_FULL" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_SearchbyMa_FULLSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_SearchbyMa_FULLResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_getMaSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_getMa" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_getMaSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_getMaResponse" />
+  </wsdl:message>
   <wsdl:message name="HocSinh_HSchuaphanlopSoapIn">
     <wsdl:part name="parameters" element="tns:HocSinh_HSchuaphanlop" />
   </wsdl:message>
   <wsdl:message name="HocSinh_HSchuaphanlopSoapOut">
     <wsdl:part name="parameters" element="tns:HocSinh_HSchuaphanlopResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_listHSDuocLenLopSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_listHSDuocLenLop" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_listHSDuocLenLopSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_listHSDuocLenLopResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_listHSLuBanSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_listHSLuBan" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_listHSLuBanSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_listHSLuBanResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_PhanLopThuCongSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_PhanLopThuCong" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_PhanLopThuCongSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_PhanLopThuCongResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_PhanLopTuDongSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_PhanLopTuDong" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_PhanLopTuDongSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_PhanLopTuDongResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_ChuyenLopSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_ChuyenLop" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_ChuyenLopSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_ChuyenLopResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_KiemTraLenLopSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_KiemTraLenLop" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_KiemTraLenLopSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_KiemTraLenLopResponse" />
   </wsdl:message>
   <wsdl:message name="HocSinh_ListSoapIn">
     <wsdl:part name="parameters" element="tns:HocSinh_List" />
@@ -2067,6 +2483,48 @@
   </wsdl:message>
   <wsdl:message name="HocSinh_getHoTenSoapOut">
     <wsdl:part name="parameters" element="tns:HocSinh_getHoTenResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_ListSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_List" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_ListSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_ThemMoiSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_ThemMoi" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_ThemMoiSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_ThemMoiResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_Insert" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_Update" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_PhanLopTuDong_getsisoSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopTuDong_getsiso" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_PhanLopTuDong_getsisoSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopTuDong_getsisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_PhanLopTuDongSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopTuDong" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_PhanLopTuDongSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopTuDongResponse" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_PhanLopThuCongSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopThuCong" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_PhanLopThuCongSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopThuCongResponse" />
   </wsdl:message>
   <wsdl:message name="GiaoVien_InsertSoapIn">
     <wsdl:part name="parameters" element="tns:GiaoVien_Insert" />
@@ -2338,84 +2796,6 @@
   <wsdl:message name="CT_KL_Mon_InsertSoapOut">
     <wsdl:part name="parameters" element="tns:CT_KL_Mon_InsertResponse" />
   </wsdl:message>
-  <wsdl:message name="CT_KL_Mon_DeleteSoapIn">
-    <wsdl:part name="parameters" element="tns:CT_KL_Mon_Delete" />
-  </wsdl:message>
-  <wsdl:message name="CT_KL_Mon_DeleteSoapOut">
-    <wsdl:part name="parameters" element="tns:CT_KL_Mon_DeleteResponse" />
-  </wsdl:message>
-  <wsdl:message name="CT_KL_MH_CheckSoapIn">
-    <wsdl:part name="parameters" element="tns:CT_KL_MH_Check" />
-  </wsdl:message>
-  <wsdl:message name="CT_KL_MH_CheckSoapOut">
-    <wsdl:part name="parameters" element="tns:CT_KL_MH_CheckResponse" />
-  </wsdl:message>
-  <wsdl:message name="CT_KL_MH_List_MH_KLSoapIn">
-    <wsdl:part name="parameters" element="tns:CT_KL_MH_List_MH_KL" />
-  </wsdl:message>
-  <wsdl:message name="CT_KL_MH_List_MH_KLSoapOut">
-    <wsdl:part name="parameters" element="tns:CT_KL_MH_List_MH_KLResponse" />
-  </wsdl:message>
-  <wsdl:message name="CT_KL_MH_Get_MaNam_MaKhoiSoapIn">
-    <wsdl:part name="parameters" element="tns:CT_KL_MH_Get_MaNam_MaKhoi" />
-  </wsdl:message>
-  <wsdl:message name="CT_KL_MH_Get_MaNam_MaKhoiSoapOut">
-    <wsdl:part name="parameters" element="tns:CT_KL_MH_Get_MaNam_MaKhoiResponse" />
-  </wsdl:message>
-  <wsdl:message name="CT_KL_MH_GetMaCTKLMHSoapIn">
-    <wsdl:part name="parameters" element="tns:CT_KL_MH_GetMaCTKLMH" />
-  </wsdl:message>
-  <wsdl:message name="CT_KL_MH_GetMaCTKLMHSoapOut">
-    <wsdl:part name="parameters" element="tns:CT_KL_MH_GetMaCTKLMHResponse" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_InsertSoapIn">
-    <wsdl:part name="parameters" element="tns:TKNam_Insert" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_InsertSoapOut">
-    <wsdl:part name="parameters" element="tns:TKNam_InsertResponse" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_UpdateDiemCuoiNamSoapIn">
-    <wsdl:part name="parameters" element="tns:TKNam_UpdateDiemCuoiNam" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_UpdateDiemCuoiNamSoapOut">
-    <wsdl:part name="parameters" element="tns:TKNam_UpdateDiemCuoiNamResponse" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_UpdateHKCuoiNamSoapIn">
-    <wsdl:part name="parameters" element="tns:TKNam_UpdateHKCuoiNam" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_UpdateHKCuoiNamSoapOut">
-    <wsdl:part name="parameters" element="tns:TKNam_UpdateHKCuoiNamResponse" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_DeleteSoapIn">
-    <wsdl:part name="parameters" element="tns:TKNam_Delete" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_DeleteSoapOut">
-    <wsdl:part name="parameters" element="tns:TKNam_DeleteResponse" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_GetMaBTKNSoapIn">
-    <wsdl:part name="parameters" element="tns:TKNam_GetMaBTKN" />
-  </wsdl:message>
-  <wsdl:message name="TKNam_GetMaBTKNSoapOut">
-    <wsdl:part name="parameters" element="tns:TKNam_GetMaBTKNResponse" />
-  </wsdl:message>
-  <wsdl:message name="TKN_get_HKCuoiNamSoapIn">
-    <wsdl:part name="parameters" element="tns:TKN_get_HKCuoiNam" />
-  </wsdl:message>
-  <wsdl:message name="TKN_get_HKCuoiNamSoapOut">
-    <wsdl:part name="parameters" element="tns:TKN_get_HKCuoiNamResponse" />
-  </wsdl:message>
-  <wsdl:message name="TKN_get_DiemCuoiNamSoapIn">
-    <wsdl:part name="parameters" element="tns:TKN_get_DiemCuoiNam" />
-  </wsdl:message>
-  <wsdl:message name="TKN_get_DiemCuoiNamSoapOut">
-    <wsdl:part name="parameters" element="tns:TKN_get_DiemCuoiNamResponse" />
-  </wsdl:message>
-  <wsdl:message name="ChucVu_checkTrungtenchucvuSoapIn">
-    <wsdl:part name="parameters" element="tns:ChucVu_checkTrungtenchucvu" />
-  </wsdl:message>
-  <wsdl:message name="ChucVu_checkTrungtenchucvuSoapOut">
-    <wsdl:part name="parameters" element="tns:ChucVu_checkTrungtenchucvuResponse" />
-  </wsdl:message>
   <wsdl:message name="todtoSoapIn">
     <wsdl:part name="parameters" element="tns:todto" />
   </wsdl:message>
@@ -2632,6 +3012,12 @@
   <wsdl:message name="Lop_ListbyNamHocSoapOut">
     <wsdl:part name="parameters" element="tns:Lop_ListbyNamHocResponse" />
   </wsdl:message>
+  <wsdl:message name="Lop_ListbyKhoiLopSoapIn">
+    <wsdl:part name="parameters" element="tns:Lop_ListbyKhoiLop" />
+  </wsdl:message>
+  <wsdl:message name="Lop_ListbyKhoiLopSoapOut">
+    <wsdl:part name="parameters" element="tns:Lop_ListbyKhoiLopResponse" />
+  </wsdl:message>
   <wsdl:message name="Lop_getTenLopSoapIn">
     <wsdl:part name="parameters" element="tns:Lop_getTenLop" />
   </wsdl:message>
@@ -2662,6 +3048,12 @@
   <wsdl:message name="KLop_ListSoapOut">
     <wsdl:part name="parameters" element="tns:KLop_ListResponse" />
   </wsdl:message>
+  <wsdl:message name="KLop_ListByMaNamSoapIn">
+    <wsdl:part name="parameters" element="tns:KLop_ListByMaNam" />
+  </wsdl:message>
+  <wsdl:message name="KLop_ListByMaNamSoapOut">
+    <wsdl:part name="parameters" element="tns:KLop_ListByMaNamResponse" />
+  </wsdl:message>
   <wsdl:message name="KLop_DeleteSoapIn">
     <wsdl:part name="parameters" element="tns:KLop_Delete" />
   </wsdl:message>
@@ -2679,6 +3071,12 @@
   </wsdl:message>
   <wsdl:message name="KLop_UpdateSoLopSoapOut">
     <wsdl:part name="parameters" element="tns:KLop_UpdateSoLopResponse" />
+  </wsdl:message>
+  <wsdl:message name="KLop_getMaKLbyMaNamSoapIn">
+    <wsdl:part name="parameters" element="tns:KLop_getMaKLbyMaNam" />
+  </wsdl:message>
+  <wsdl:message name="KLop_getMaKLbyMaNamSoapOut">
+    <wsdl:part name="parameters" element="tns:KLop_getMaKLbyMaNamResponse" />
   </wsdl:message>
   <wsdl:message name="NamHoc_InsertSoapIn">
     <wsdl:part name="parameters" element="tns:NamHoc_Insert" />
@@ -2776,28 +3174,98 @@
   <wsdl:message name="HocSinh_searchbyMaSoapOut">
     <wsdl:part name="parameters" element="tns:HocSinh_searchbyMaResponse" />
   </wsdl:message>
-  <wsdl:message name="HocSinh_searchbyTenSoapIn">
-    <wsdl:part name="parameters" element="tns:HocSinh_searchbyTen" />
-  </wsdl:message>
-  <wsdl:message name="HocSinh_searchbyTenSoapOut">
-    <wsdl:part name="parameters" element="tns:HocSinh_searchbyTenResponse" />
-  </wsdl:message>
-  <wsdl:message name="HocSinh_SearchbyMa_FULLSoapIn">
-    <wsdl:part name="parameters" element="tns:HocSinh_SearchbyMa_FULL" />
-  </wsdl:message>
-  <wsdl:message name="HocSinh_SearchbyMa_FULLSoapOut">
-    <wsdl:part name="parameters" element="tns:HocSinh_SearchbyMa_FULLResponse" />
-  </wsdl:message>
-  <wsdl:message name="HocSinh_getMaSoapIn">
-    <wsdl:part name="parameters" element="tns:HocSinh_getMa" />
-  </wsdl:message>
-  <wsdl:message name="HocSinh_getMaSoapOut">
-    <wsdl:part name="parameters" element="tns:HocSinh_getMaResponse" />
-  </wsdl:message>
   <wsdl:portType name="SSM_ServicesSoap">
+    <wsdl:operation name="CT_KL_Mon_Delete">
+      <wsdl:input message="tns:CT_KL_Mon_DeleteSoapIn" />
+      <wsdl:output message="tns:CT_KL_Mon_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_Check">
+      <wsdl:input message="tns:CT_KL_MH_CheckSoapIn" />
+      <wsdl:output message="tns:CT_KL_MH_CheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_List_MH_KL">
+      <wsdl:input message="tns:CT_KL_MH_List_MH_KLSoapIn" />
+      <wsdl:output message="tns:CT_KL_MH_List_MH_KLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_Get_MaNam_MaKhoi">
+      <wsdl:input message="tns:CT_KL_MH_Get_MaNam_MaKhoiSoapIn" />
+      <wsdl:output message="tns:CT_KL_MH_Get_MaNam_MaKhoiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_GetMaCTKLMH">
+      <wsdl:input message="tns:CT_KL_MH_GetMaCTKLMHSoapIn" />
+      <wsdl:output message="tns:CT_KL_MH_GetMaCTKLMHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_Insert">
+      <wsdl:input message="tns:TKNam_InsertSoapIn" />
+      <wsdl:output message="tns:TKNam_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_UpdateDiemCuoiNam">
+      <wsdl:input message="tns:TKNam_UpdateDiemCuoiNamSoapIn" />
+      <wsdl:output message="tns:TKNam_UpdateDiemCuoiNamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_UpdateHKCuoiNam">
+      <wsdl:input message="tns:TKNam_UpdateHKCuoiNamSoapIn" />
+      <wsdl:output message="tns:TKNam_UpdateHKCuoiNamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_Delete">
+      <wsdl:input message="tns:TKNam_DeleteSoapIn" />
+      <wsdl:output message="tns:TKNam_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_GetMaBTKN">
+      <wsdl:input message="tns:TKNam_GetMaBTKNSoapIn" />
+      <wsdl:output message="tns:TKNam_GetMaBTKNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TKN_get_HKCuoiNam">
+      <wsdl:input message="tns:TKN_get_HKCuoiNamSoapIn" />
+      <wsdl:output message="tns:TKN_get_HKCuoiNamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TKN_get_DiemCuoiNam">
+      <wsdl:input message="tns:TKN_get_DiemCuoiNamSoapIn" />
+      <wsdl:output message="tns:TKN_get_DiemCuoiNamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChucVu_checkTrungtenchucvu">
+      <wsdl:input message="tns:ChucVu_checkTrungtenchucvuSoapIn" />
+      <wsdl:output message="tns:ChucVu_checkTrungtenchucvuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_searchbyTen">
+      <wsdl:input message="tns:HocSinh_searchbyTenSoapIn" />
+      <wsdl:output message="tns:HocSinh_searchbyTenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_SearchbyMa_FULL">
+      <wsdl:input message="tns:HocSinh_SearchbyMa_FULLSoapIn" />
+      <wsdl:output message="tns:HocSinh_SearchbyMa_FULLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_getMa">
+      <wsdl:input message="tns:HocSinh_getMaSoapIn" />
+      <wsdl:output message="tns:HocSinh_getMaSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="HocSinh_HSchuaphanlop">
       <wsdl:input message="tns:HocSinh_HSchuaphanlopSoapIn" />
       <wsdl:output message="tns:HocSinh_HSchuaphanlopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_listHSDuocLenLop">
+      <wsdl:input message="tns:HocSinh_listHSDuocLenLopSoapIn" />
+      <wsdl:output message="tns:HocSinh_listHSDuocLenLopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_listHSLuBan">
+      <wsdl:input message="tns:HocSinh_listHSLuBanSoapIn" />
+      <wsdl:output message="tns:HocSinh_listHSLuBanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_PhanLopThuCong">
+      <wsdl:input message="tns:HocSinh_PhanLopThuCongSoapIn" />
+      <wsdl:output message="tns:HocSinh_PhanLopThuCongSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_PhanLopTuDong">
+      <wsdl:input message="tns:HocSinh_PhanLopTuDongSoapIn" />
+      <wsdl:output message="tns:HocSinh_PhanLopTuDongSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_ChuyenLop">
+      <wsdl:input message="tns:HocSinh_ChuyenLopSoapIn" />
+      <wsdl:output message="tns:HocSinh_ChuyenLopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_KiemTraLenLop">
+      <wsdl:input message="tns:HocSinh_KiemTraLenLopSoapIn" />
+      <wsdl:output message="tns:HocSinh_KiemTraLenLopSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="HocSinh_List">
       <wsdl:input message="tns:HocSinh_ListSoapIn" />
@@ -2806,6 +3274,34 @@
     <wsdl:operation name="HocSinh_getHoTen">
       <wsdl:input message="tns:HocSinh_getHoTenSoapIn" />
       <wsdl:output message="tns:HocSinh_getHoTenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_List">
+      <wsdl:input message="tns:HocSinh_LenCap_ListSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_ListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_ThemMoi">
+      <wsdl:input message="tns:HocSinh_LenCap_ThemMoiSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_ThemMoiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_Insert">
+      <wsdl:input message="tns:HocSinh_LenCap_InsertSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_Update">
+      <wsdl:input message="tns:HocSinh_LenCap_UpdateSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong_getsiso">
+      <wsdl:input message="tns:HocSinh_LenCap_PhanLopTuDong_getsisoSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_PhanLopTuDong_getsisoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong">
+      <wsdl:input message="tns:HocSinh_LenCap_PhanLopTuDongSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_PhanLopTuDongSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_PhanLopThuCong">
+      <wsdl:input message="tns:HocSinh_LenCap_PhanLopThuCongSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_PhanLopThuCongSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GiaoVien_Insert">
       <wsdl:input message="tns:GiaoVien_InsertSoapIn" />
@@ -2987,58 +3483,6 @@
       <wsdl:input message="tns:CT_KL_Mon_InsertSoapIn" />
       <wsdl:output message="tns:CT_KL_Mon_InsertSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CT_KL_Mon_Delete">
-      <wsdl:input message="tns:CT_KL_Mon_DeleteSoapIn" />
-      <wsdl:output message="tns:CT_KL_Mon_DeleteSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_Check">
-      <wsdl:input message="tns:CT_KL_MH_CheckSoapIn" />
-      <wsdl:output message="tns:CT_KL_MH_CheckSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_List_MH_KL">
-      <wsdl:input message="tns:CT_KL_MH_List_MH_KLSoapIn" />
-      <wsdl:output message="tns:CT_KL_MH_List_MH_KLSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_Get_MaNam_MaKhoi">
-      <wsdl:input message="tns:CT_KL_MH_Get_MaNam_MaKhoiSoapIn" />
-      <wsdl:output message="tns:CT_KL_MH_Get_MaNam_MaKhoiSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_GetMaCTKLMH">
-      <wsdl:input message="tns:CT_KL_MH_GetMaCTKLMHSoapIn" />
-      <wsdl:output message="tns:CT_KL_MH_GetMaCTKLMHSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_Insert">
-      <wsdl:input message="tns:TKNam_InsertSoapIn" />
-      <wsdl:output message="tns:TKNam_InsertSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_UpdateDiemCuoiNam">
-      <wsdl:input message="tns:TKNam_UpdateDiemCuoiNamSoapIn" />
-      <wsdl:output message="tns:TKNam_UpdateDiemCuoiNamSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_UpdateHKCuoiNam">
-      <wsdl:input message="tns:TKNam_UpdateHKCuoiNamSoapIn" />
-      <wsdl:output message="tns:TKNam_UpdateHKCuoiNamSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_Delete">
-      <wsdl:input message="tns:TKNam_DeleteSoapIn" />
-      <wsdl:output message="tns:TKNam_DeleteSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_GetMaBTKN">
-      <wsdl:input message="tns:TKNam_GetMaBTKNSoapIn" />
-      <wsdl:output message="tns:TKNam_GetMaBTKNSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="TKN_get_HKCuoiNam">
-      <wsdl:input message="tns:TKN_get_HKCuoiNamSoapIn" />
-      <wsdl:output message="tns:TKN_get_HKCuoiNamSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="TKN_get_DiemCuoiNam">
-      <wsdl:input message="tns:TKN_get_DiemCuoiNamSoapIn" />
-      <wsdl:output message="tns:TKN_get_DiemCuoiNamSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ChucVu_checkTrungtenchucvu">
-      <wsdl:input message="tns:ChucVu_checkTrungtenchucvuSoapIn" />
-      <wsdl:output message="tns:ChucVu_checkTrungtenchucvuSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="todto">
       <wsdl:input message="tns:todtoSoapIn" />
       <wsdl:output message="tns:todtoSoapOut" />
@@ -3183,6 +3627,10 @@
       <wsdl:input message="tns:Lop_ListbyNamHocSoapIn" />
       <wsdl:output message="tns:Lop_ListbyNamHocSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="Lop_ListbyKhoiLop">
+      <wsdl:input message="tns:Lop_ListbyKhoiLopSoapIn" />
+      <wsdl:output message="tns:Lop_ListbyKhoiLopSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Lop_getTenLop">
       <wsdl:input message="tns:Lop_getTenLopSoapIn" />
       <wsdl:output message="tns:Lop_getTenLopSoapOut" />
@@ -3203,6 +3651,10 @@
       <wsdl:input message="tns:KLop_ListSoapIn" />
       <wsdl:output message="tns:KLop_ListSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="KLop_ListByMaNam">
+      <wsdl:input message="tns:KLop_ListByMaNamSoapIn" />
+      <wsdl:output message="tns:KLop_ListByMaNamSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="KLop_Delete">
       <wsdl:input message="tns:KLop_DeleteSoapIn" />
       <wsdl:output message="tns:KLop_DeleteSoapOut" />
@@ -3214,6 +3666,10 @@
     <wsdl:operation name="KLop_UpdateSoLop">
       <wsdl:input message="tns:KLop_UpdateSoLopSoapIn" />
       <wsdl:output message="tns:KLop_UpdateSoLopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KLop_getMaKLbyMaNam">
+      <wsdl:input message="tns:KLop_getMaKLbyMaNamSoapIn" />
+      <wsdl:output message="tns:KLop_getMaKLbyMaNamSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="NamHoc_Insert">
       <wsdl:input message="tns:NamHoc_InsertSoapIn" />
@@ -3279,23 +3735,209 @@
       <wsdl:input message="tns:HocSinh_searchbyMaSoapIn" />
       <wsdl:output message="tns:HocSinh_searchbyMaSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="HocSinh_searchbyTen">
-      <wsdl:input message="tns:HocSinh_searchbyTenSoapIn" />
-      <wsdl:output message="tns:HocSinh_searchbyTenSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="HocSinh_SearchbyMa_FULL">
-      <wsdl:input message="tns:HocSinh_SearchbyMa_FULLSoapIn" />
-      <wsdl:output message="tns:HocSinh_SearchbyMa_FULLSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="HocSinh_getMa">
-      <wsdl:input message="tns:HocSinh_getMaSoapIn" />
-      <wsdl:output message="tns:HocSinh_getMaSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SSM_ServicesSoap" type="tns:SSM_ServicesSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CT_KL_Mon_Delete">
+      <soap:operation soapAction="http://tempuri.org/CT_KL_Mon_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_Check">
+      <soap:operation soapAction="http://tempuri.org/CT_KL_MH_Check" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_List_MH_KL">
+      <soap:operation soapAction="http://tempuri.org/CT_KL_MH_List_MH_KL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_Get_MaNam_MaKhoi">
+      <soap:operation soapAction="http://tempuri.org/CT_KL_MH_Get_MaNam_MaKhoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_GetMaCTKLMH">
+      <soap:operation soapAction="http://tempuri.org/CT_KL_MH_GetMaCTKLMH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_Insert">
+      <soap:operation soapAction="http://tempuri.org/TKNam_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_UpdateDiemCuoiNam">
+      <soap:operation soapAction="http://tempuri.org/TKNam_UpdateDiemCuoiNam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_UpdateHKCuoiNam">
+      <soap:operation soapAction="http://tempuri.org/TKNam_UpdateHKCuoiNam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_Delete">
+      <soap:operation soapAction="http://tempuri.org/TKNam_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_GetMaBTKN">
+      <soap:operation soapAction="http://tempuri.org/TKNam_GetMaBTKN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKN_get_HKCuoiNam">
+      <soap:operation soapAction="http://tempuri.org/TKN_get_HKCuoiNam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKN_get_DiemCuoiNam">
+      <soap:operation soapAction="http://tempuri.org/TKN_get_DiemCuoiNam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChucVu_checkTrungtenchucvu">
+      <soap:operation soapAction="http://tempuri.org/ChucVu_checkTrungtenchucvu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_searchbyTen">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_searchbyTen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_SearchbyMa_FULL">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_SearchbyMa_FULL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_getMa">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_getMa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="HocSinh_HSchuaphanlop">
       <soap:operation soapAction="http://tempuri.org/HocSinh_HSchuaphanlop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_listHSDuocLenLop">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_listHSDuocLenLop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_listHSLuBan">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_listHSLuBan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_PhanLopThuCong">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_PhanLopThuCong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_PhanLopTuDong">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_PhanLopTuDong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_ChuyenLop">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_ChuyenLop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_KiemTraLenLop">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_KiemTraLenLop" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3314,6 +3956,69 @@
     </wsdl:operation>
     <wsdl:operation name="HocSinh_getHoTen">
       <soap:operation soapAction="http://tempuri.org/HocSinh_getHoTen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_List">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_ThemMoi">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_ThemMoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_Insert">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_Update">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong_getsiso">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopTuDong_getsiso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopTuDong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_PhanLopThuCong">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopThuCong" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3726,123 +4431,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CT_KL_Mon_Delete">
-      <soap:operation soapAction="http://tempuri.org/CT_KL_Mon_Delete" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_Check">
-      <soap:operation soapAction="http://tempuri.org/CT_KL_MH_Check" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_List_MH_KL">
-      <soap:operation soapAction="http://tempuri.org/CT_KL_MH_List_MH_KL" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_Get_MaNam_MaKhoi">
-      <soap:operation soapAction="http://tempuri.org/CT_KL_MH_Get_MaNam_MaKhoi" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_GetMaCTKLMH">
-      <soap:operation soapAction="http://tempuri.org/CT_KL_MH_GetMaCTKLMH" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_Insert">
-      <soap:operation soapAction="http://tempuri.org/TKNam_Insert" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_UpdateDiemCuoiNam">
-      <soap:operation soapAction="http://tempuri.org/TKNam_UpdateDiemCuoiNam" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_UpdateHKCuoiNam">
-      <soap:operation soapAction="http://tempuri.org/TKNam_UpdateHKCuoiNam" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_Delete">
-      <soap:operation soapAction="http://tempuri.org/TKNam_Delete" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_GetMaBTKN">
-      <soap:operation soapAction="http://tempuri.org/TKNam_GetMaBTKN" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKN_get_HKCuoiNam">
-      <soap:operation soapAction="http://tempuri.org/TKN_get_HKCuoiNam" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKN_get_DiemCuoiNam">
-      <soap:operation soapAction="http://tempuri.org/TKN_get_DiemCuoiNam" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ChucVu_checkTrungtenchucvu">
-      <soap:operation soapAction="http://tempuri.org/ChucVu_checkTrungtenchucvu" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="todto">
       <soap:operation soapAction="http://tempuri.org/todto" style="document" />
       <wsdl:input>
@@ -4167,6 +4755,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Lop_ListbyKhoiLop">
+      <soap:operation soapAction="http://tempuri.org/Lop_ListbyKhoiLop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Lop_getTenLop">
       <soap:operation soapAction="http://tempuri.org/Lop_getTenLop" style="document" />
       <wsdl:input>
@@ -4212,6 +4809,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="KLop_ListByMaNam">
+      <soap:operation soapAction="http://tempuri.org/KLop_ListByMaNam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="KLop_Delete">
       <soap:operation soapAction="http://tempuri.org/KLop_Delete" style="document" />
       <wsdl:input>
@@ -4232,6 +4838,15 @@
     </wsdl:operation>
     <wsdl:operation name="KLop_UpdateSoLop">
       <soap:operation soapAction="http://tempuri.org/KLop_UpdateSoLop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KLop_getMaKLbyMaNam">
+      <soap:operation soapAction="http://tempuri.org/KLop_getMaKLbyMaNam" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4383,38 +4998,209 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="HocSinh_searchbyTen">
-      <soap:operation soapAction="http://tempuri.org/HocSinh_searchbyTen" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="HocSinh_SearchbyMa_FULL">
-      <soap:operation soapAction="http://tempuri.org/HocSinh_SearchbyMa_FULL" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="HocSinh_getMa">
-      <soap:operation soapAction="http://tempuri.org/HocSinh_getMa" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="SSM_ServicesSoap12" type="tns:SSM_ServicesSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CT_KL_Mon_Delete">
+      <soap12:operation soapAction="http://tempuri.org/CT_KL_Mon_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_Check">
+      <soap12:operation soapAction="http://tempuri.org/CT_KL_MH_Check" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_List_MH_KL">
+      <soap12:operation soapAction="http://tempuri.org/CT_KL_MH_List_MH_KL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_Get_MaNam_MaKhoi">
+      <soap12:operation soapAction="http://tempuri.org/CT_KL_MH_Get_MaNam_MaKhoi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CT_KL_MH_GetMaCTKLMH">
+      <soap12:operation soapAction="http://tempuri.org/CT_KL_MH_GetMaCTKLMH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_Insert">
+      <soap12:operation soapAction="http://tempuri.org/TKNam_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_UpdateDiemCuoiNam">
+      <soap12:operation soapAction="http://tempuri.org/TKNam_UpdateDiemCuoiNam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_UpdateHKCuoiNam">
+      <soap12:operation soapAction="http://tempuri.org/TKNam_UpdateHKCuoiNam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_Delete">
+      <soap12:operation soapAction="http://tempuri.org/TKNam_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKNam_GetMaBTKN">
+      <soap12:operation soapAction="http://tempuri.org/TKNam_GetMaBTKN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKN_get_HKCuoiNam">
+      <soap12:operation soapAction="http://tempuri.org/TKN_get_HKCuoiNam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TKN_get_DiemCuoiNam">
+      <soap12:operation soapAction="http://tempuri.org/TKN_get_DiemCuoiNam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChucVu_checkTrungtenchucvu">
+      <soap12:operation soapAction="http://tempuri.org/ChucVu_checkTrungtenchucvu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_searchbyTen">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_searchbyTen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_SearchbyMa_FULL">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_SearchbyMa_FULL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_getMa">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_getMa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="HocSinh_HSchuaphanlop">
       <soap12:operation soapAction="http://tempuri.org/HocSinh_HSchuaphanlop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_listHSDuocLenLop">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_listHSDuocLenLop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_listHSLuBan">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_listHSLuBan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_PhanLopThuCong">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_PhanLopThuCong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_PhanLopTuDong">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_PhanLopTuDong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_ChuyenLop">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_ChuyenLop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_KiemTraLenLop">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_KiemTraLenLop" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4433,6 +5219,69 @@
     </wsdl:operation>
     <wsdl:operation name="HocSinh_getHoTen">
       <soap12:operation soapAction="http://tempuri.org/HocSinh_getHoTen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_List">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_ThemMoi">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_ThemMoi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_Insert">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_Update">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong_getsiso">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopTuDong_getsiso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopTuDong" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_PhanLopThuCong">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopThuCong" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4845,123 +5694,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CT_KL_Mon_Delete">
-      <soap12:operation soapAction="http://tempuri.org/CT_KL_Mon_Delete" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_Check">
-      <soap12:operation soapAction="http://tempuri.org/CT_KL_MH_Check" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_List_MH_KL">
-      <soap12:operation soapAction="http://tempuri.org/CT_KL_MH_List_MH_KL" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_Get_MaNam_MaKhoi">
-      <soap12:operation soapAction="http://tempuri.org/CT_KL_MH_Get_MaNam_MaKhoi" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CT_KL_MH_GetMaCTKLMH">
-      <soap12:operation soapAction="http://tempuri.org/CT_KL_MH_GetMaCTKLMH" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_Insert">
-      <soap12:operation soapAction="http://tempuri.org/TKNam_Insert" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_UpdateDiemCuoiNam">
-      <soap12:operation soapAction="http://tempuri.org/TKNam_UpdateDiemCuoiNam" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_UpdateHKCuoiNam">
-      <soap12:operation soapAction="http://tempuri.org/TKNam_UpdateHKCuoiNam" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_Delete">
-      <soap12:operation soapAction="http://tempuri.org/TKNam_Delete" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKNam_GetMaBTKN">
-      <soap12:operation soapAction="http://tempuri.org/TKNam_GetMaBTKN" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKN_get_HKCuoiNam">
-      <soap12:operation soapAction="http://tempuri.org/TKN_get_HKCuoiNam" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TKN_get_DiemCuoiNam">
-      <soap12:operation soapAction="http://tempuri.org/TKN_get_DiemCuoiNam" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ChucVu_checkTrungtenchucvu">
-      <soap12:operation soapAction="http://tempuri.org/ChucVu_checkTrungtenchucvu" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="todto">
       <soap12:operation soapAction="http://tempuri.org/todto" style="document" />
       <wsdl:input>
@@ -5286,6 +6018,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Lop_ListbyKhoiLop">
+      <soap12:operation soapAction="http://tempuri.org/Lop_ListbyKhoiLop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Lop_getTenLop">
       <soap12:operation soapAction="http://tempuri.org/Lop_getTenLop" style="document" />
       <wsdl:input>
@@ -5331,6 +6072,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="KLop_ListByMaNam">
+      <soap12:operation soapAction="http://tempuri.org/KLop_ListByMaNam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="KLop_Delete">
       <soap12:operation soapAction="http://tempuri.org/KLop_Delete" style="document" />
       <wsdl:input>
@@ -5351,6 +6101,15 @@
     </wsdl:operation>
     <wsdl:operation name="KLop_UpdateSoLop">
       <soap12:operation soapAction="http://tempuri.org/KLop_UpdateSoLop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KLop_getMaKLbyMaNam">
+      <soap12:operation soapAction="http://tempuri.org/KLop_getMaKLbyMaNam" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5495,33 +6254,6 @@
     </wsdl:operation>
     <wsdl:operation name="HocSinh_searchbyMa">
       <soap12:operation soapAction="http://tempuri.org/HocSinh_searchbyMa" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="HocSinh_searchbyTen">
-      <soap12:operation soapAction="http://tempuri.org/HocSinh_searchbyTen" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="HocSinh_SearchbyMa_FULL">
-      <soap12:operation soapAction="http://tempuri.org/HocSinh_SearchbyMa_FULL" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="HocSinh_getMa">
-      <soap12:operation soapAction="http://tempuri.org/HocSinh_getMa" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
