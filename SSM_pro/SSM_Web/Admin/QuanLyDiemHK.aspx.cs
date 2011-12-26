@@ -170,6 +170,7 @@ public partial class Admin_QuanLyDiemHK : System.Web.UI.Page
         float diemtbkt;
         foreach (GridViewRow gvr in gvhocsinh.Rows)
         {
+            bool check = true;
             _diem15p = 0;
             _diem1tiet = 0;
             _diemmieng = 0;
@@ -187,29 +188,59 @@ public partial class Admin_QuanLyDiemHK : System.Web.UI.Page
             {
                 if (d15p.Length > 0)
                 {
-                    _diem15p += float.Parse(d15p.ToString());
-                    count++;
+                    try
+                    {
+                        _diem15p += float.Parse(d15p.ToString());
+                        count++;
+                    }
+                    catch
+                    {
+                        check = false;
+                    }
                 }
             }
             foreach (string dm in diemmieng.Text.Split(' '))
             {
                 if (dm.Length > 0)
                 {
-                    _diemmieng += float.Parse(dm.ToString());
-                    count++;
+                    try
+                    {
+                        _diemmieng += float.Parse(dm.ToString());
+                        count++;
+                    }
+                    catch
+                    {
+                        check = false;
+                    }
                 }
             }
             foreach (string d1t in diem1tiet.Text.Split(' '))
             {
-                if (d1t.Length > 0)
+                try
                 {
-                    _diem1tiet += float.Parse(d1t.ToString()) * 2;
-                    count += 2;// diem 1tiet he so 2
+                    if (d1t.Length > 0)
+                    {
+                        _diem1tiet += float.Parse(d1t.ToString()) * 2;
+                        count += 2;// diem 1tiet he so 2
+                    }
+                }
+                catch
+                {
+                    check = false;
                 }
             }
-                 float diem = (float)(Math.Round((_diem1tiet + _diem15p + _diemmieng ) / count, 1));
-                 diemtbkt = diem;
-                 int n = sv.BDM_HK_UpdateDiemTBM_KT(mahoc, mactklmh, diemtbkt);
+
+            if (check == true)
+            {
+                float diem = (float)(Math.Round((_diem1tiet + _diem15p + _diemmieng) / count, 1));
+                diemtbkt = diem;
+                int n = sv.BDM_HK_UpdateDiemTBM_KT(mahoc, mactklmh, diemtbkt);
+            }
+            else
+            {
+                Response.Write("<script>alert('Điểm của học sinh " + mahs.Text + " nhập vào chưa đúng định dạng!')</script>");
+                break;
+            }
            
         }
              

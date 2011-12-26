@@ -8,3 +8,8 @@ E:\ASP\SSM_Webservices\DTO\bin\Debug\DTO.pdb
 E:\ASP\SSM_Webservices\DTO\obj\Debug\ResolveAssemblyReference.cache
 E:\ASP\SSM_Webservices\DTO\obj\Debug\DTO.dll
 E:\ASP\SSM_Webservices\DTO\obj\Debug\DTO.pdb
+D:\study\ky 7\ga\SSM_WebServices\DTO\bin\Debug\DTO.dll
+D:\study\ky 7\ga\SSM_WebServices\DTO\bin\Debug\DTO.pdb
+D:\study\ky 7\ga\SSM_WebServices\DTO\obj\Debug\ResolveAssemblyReference.cache
+D:\study\ky 7\ga\SSM_WebServices\DTO\obj\Debug\DTO.dll
+D:\study\ky 7\ga\SSM_WebServices\DTO\obj\Debug\DTO.pdb

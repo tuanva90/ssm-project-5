@@ -43,8 +43,8 @@ public class NamHocBUS
            {
                hkdto1.MaHK = hk.getMa();
                n= hk.Insert(hkdto1);
-               
-               
+               kldto.MaNam = nhdto.MaNam;
+               kldto.SoLop = 6;
                for(int i =6;i<10;i++)
                {
                    kldto.TenKhoiLop = "Khối ";
@@ -52,14 +52,11 @@ public class NamHocBUS
                    kldto.TenKhoiLop += i.ToString();
                    n = sv.KLop_Insert(kldto);
                }
-               kldto.MaNam = nhdto.MaNam;
-               kldto.SoLop = 6;
                DataTable dt = klbus.List();
                for (int i = 0; i < dt.Rows.Count; i++)
                {
                    n = klmonbus.Insert(nhdto.MaNam, dt.Rows[i][0].ToString());
                }
-               
            }
            return n;
        }

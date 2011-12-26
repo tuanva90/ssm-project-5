@@ -42,12 +42,13 @@ namespace DAO
         }
         public string get_MaKhoi(string manam)
         {
-            string sql = "select MaKhoiLop from KHOILOP where MaNam = @MaNam";
-            DataTable dt = new DataTable();
-            SqlParameter sp = new SqlParameter("@MaNam", manam);
-            dt = conectData.LoadData(sql, sp);
-            dt.TableName = "dts";
-            return dt.Rows[0][0].ToString();
+        //    string sql = "select MaKhoiLop from KHOILOP where MaNam = @MaNam";
+        //    DataTable dt = new DataTable();
+        //    SqlParameter sp = new SqlParameter("@MaNam", manam);
+        //    dt = conectData.LoadData(sql, sp);
+        //    dt.TableName = "dts";
+        //    return dt.Rows[0][0].ToString();
+            return "";
         }
         public int Delete(string makhoilop)
         {

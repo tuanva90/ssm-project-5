@@ -159,7 +159,6 @@ namespace DAO
             strsql = "select * from LOP where MaKhoiLop = @makhoilop";
             sp = new SqlParameter("@makhoilop", makhoilop);
             DataTable dtLop = conectData.LoadData(strsql, sp);
-            if (dtLop.Rows.Count == 0) return 0;
             int insolop = dtLop.Rows.Count;
             
             DataTable dtDSHS = List();

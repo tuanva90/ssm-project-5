@@ -140,7 +140,7 @@ namespace DAO
             SqlParameter spKLC = new SqlParameter("@MaKhoiLop", MaKhoiLop_Cu);
             DataTable dtKLC = conectData.LoadData(strKLC, spKLC);
 
-            string sql = " select distinct hs.MaHS , hs.HoTen  from HOCSINH hs, HOC h, LOP l, TKNAM tkn where l.MaKhoiLop = @MaKhoiLop and l.MaLop = h.MaLop and h.MaHS = hs.MaHS and h.MaHS = tkn.MaHS and tkn.MaNam = @MaNam and tkn.DiemCuoiNam >= 5"; // hs.MaHS not in(select hoc.MaHS from HOC hoc, HOCKY hk,NAMHOC nh where hoc.MaHK = hk.MaHK and hk.MaNam = nh.MaNam and nh.MaNam =@manam) ";// where HoTen like @valude       
+            string sql = " select distinct hs.MaHS as 'Mã HS', hs.HoTen as 'Họ tên' from HOCSINH hs, HOC h, LOP l, TKNAM tkn where l.MaKhoiLop = @MaKhoiLop and l.MaLop = h.MaLop and h.MaHS = hs.MaHS and h.MaHS = tkn.MaHS and tkn.MaNam = @MaNam and tkn.DiemCuoiNam >= 5"; // hs.MaHS not in(select hoc.MaHS from HOC hoc, HOCKY hk,NAMHOC nh where hoc.MaHK = hk.MaHK and hk.MaNam = nh.MaNam and nh.MaNam =@manam) ";// where HoTen like @valude       
             SqlParameter[] splistHS = new SqlParameter[2];
             splistHS[0] = new SqlParameter("@MaKhoiLop", MaKhoiLop_Cu);
             splistHS[1] = new SqlParameter("@MaNam", dtKLC.Rows[0]["MaNam"].ToString());
@@ -157,7 +157,7 @@ namespace DAO
             SqlParameter spKLC = new SqlParameter("@MaKhoiLop", MaKhoiLop_Cu);
             DataTable dtKLC = conectData.LoadData(strKLC, spKLC);
 
-            string sql = " select distinct hs.MaHS , hs.HoTen  from HOCSINH hs, HOC h, LOP l, TKNAM tkn where l.MaKhoiLop = @MaKhoiLop and l.MaLop = h.MaLop and h.MaHS = hs.MaHS and h.MaHS = tkn.MaHS and tkn.MaNam = @MaNam and tkn.DiemCuoiNam < 5"; // hs.MaHS not in(select hoc.MaHS from HOC hoc, HOCKY hk,NAMHOC nh where hoc.MaHK = hk.MaHK and hk.MaNam = nh.MaNam and nh.MaNam =@manam) ";// where HoTen like @valude       
+            string sql = " select distinct hs.MaHS as 'Mã HS', hs.HoTen as 'Họ tên' from HOCSINH hs, HOC h, LOP l, TKNAM tkn where l.MaKhoiLop = @MaKhoiLop and l.MaLop = h.MaLop and h.MaHS = hs.MaHS and h.MaHS = tkn.MaHS and tkn.MaNam = @MaNam and tkn.DiemCuoiNam < 5"; // hs.MaHS not in(select hoc.MaHS from HOC hoc, HOCKY hk,NAMHOC nh where hoc.MaHK = hk.MaHK and hk.MaNam = nh.MaNam and nh.MaNam =@manam) ";// where HoTen like @valude       
             SqlParameter[] splistHS = new SqlParameter[2];
             splistHS[0] = new SqlParameter("@MaKhoiLop", MaKhoiLop_Cu);
             splistHS[1] = new SqlParameter("@MaNam", dtKLC.Rows[0]["MaNam"].ToString());

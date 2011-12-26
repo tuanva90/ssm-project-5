@@ -16,3 +16,12 @@ E:\ASP\SSM_Webservices\SSM_Webservices\bin\DTO.pdb
 E:\ASP\SSM_Webservices\SSM_Webservices\obj\Debug\ResolveAssemblyReference.cache
 E:\ASP\SSM_Webservices\SSM_Webservices\obj\Debug\SSM_Webservices.dll
 E:\ASP\SSM_Webservices\SSM_Webservices\obj\Debug\SSM_Webservices.pdb
+D:\study\ky 7\ga\SSM_WebServices\SSM_Webservices\bin\SSM_Webservices.dll
+D:\study\ky 7\ga\SSM_WebServices\SSM_Webservices\bin\SSM_Webservices.pdb
+D:\study\ky 7\ga\SSM_WebServices\SSM_Webservices\bin\DAO.dll
+D:\study\ky 7\ga\SSM_WebServices\SSM_Webservices\bin\DTO.dll
+D:\study\ky 7\ga\SSM_WebServices\SSM_Webservices\bin\DAO.pdb
+D:\study\ky 7\ga\SSM_WebServices\SSM_Webservices\bin\DTO.pdb
+D:\study\ky 7\ga\SSM_WebServices\SSM_Webservices\obj\Debug\ResolveAssemblyReference.cache
+D:\study\ky 7\ga\SSM_WebServices\SSM_Webservices\obj\Debug\SSM_Webservices.dll
+D:\study\ky 7\ga\SSM_WebServices\SSM_Webservices\obj\Debug\SSM_Webservices.pdb
