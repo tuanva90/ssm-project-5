@@ -73,13 +73,27 @@ namespace DAO
         }
         public DataTable ListbyNamHoc(string namhoc)//lay danh sach cac lop hoc theo năm
         {
-            string sql = "select distinct l.MaLop as 'Mã lớp',l.TenLop as 'Tên Lớp',l.SiSo as 'Sĩ số',l.MaGVCN as 'Mã GVCN',(select gv.HoTen from GIAOVIEN gv where gv.MaGV = l.MaGVCN ) as 'GVCN' from LOP l, HOC hoc, HOCKY hk where l.MaLop=hoc.MaLop and hoc.MaHK=hk.MaHK and hk.MaNam=@manam ";
+            string sql = "select distinct l.MaLop as 'Mã lớp',l.TenLop as 'Tên Lớp',l.SiSo as 'Sĩ số',l.MaGVCN as 'Mã GVCN',(select gv.HoTen from GIAOVIEN gv where gv.MaGV = l.MaGVCN ) as 'GVCN' from LOP l,KHOILOP kl, HOC hoc, HOCKY hk where l.MaLop=kl.MaLop and kl.MaNam=@manam ";
             SqlParameter sp = new SqlParameter("@manam", namhoc);
             DataTable dt = new DataTable();
             dt = conectData.LoadData(sql,sp);
             dt.TableName = "dts";
             return dt;
         }
+
+//---Create by TuanVA
+
+        public DataTable ListbyMaKhoi(string makhoi)//lay danh sach cac lop hoc theo khoi lop
+        {
+            string sql = "select distinct l.MaLop ,l.TenLop from LOP l where l.MaKhoiLop = @MaKhoiLop";
+            SqlParameter sp = new SqlParameter("@MaKhoiLop", makhoi);
+            DataTable dt = new DataTable();
+            dt = conectData.LoadData(sql, sp);
+            dt.TableName = "dts";
+            return dt;
+        }
+
+//End by TuanVA
         public DataTable Searchbymakl(string makl)// lanh danh sach lop theo ma khoi lop!
         {
             string sql = "select l.MaLop as 'Mã lớp',l.TenLop as 'Tên Lớp',l.SiSo as 'Sĩ số',l.MaGVCN as 'Mã GVCN',(select gv.HoTen from GIAOVIEN gv where gv.MaGV = l.MaGVCN ) as 'GVCN' from LOP l where l.MaKhoiLop=@makl";
@@ -89,10 +103,12 @@ namespace DAO
             dt.TableName = "dts";
             return dt;
         }
-        public string SearchMakl(string malop)// tim ma khoi lop tu ma lop
+        public string SearchMakl(string malop, string manam)// tim ma khoi lop tu ma lop
         {
-            string sql = "select MaKhoiLop from LOP where MaLop=@malop";
-            SqlParameter sp = new SqlParameter("@malop", malop);
+            string sql = "select kl.MaKhoiLop from LOP l, KHOILOP kl where kl.MaKhoiLop=l.MaKhoiLop and l.MaLop=@malop and kl.MaNam=@manam";
+             SqlParameter[] sp = new SqlParameter[2];
+            sp[0] = new SqlParameter("@malop", malop);
+            sp[1] = new SqlParameter("@manam", manam);
             DataTable dt = conectData.LoadData(sql, sp);
             return dt.Rows[0][0].ToString();
 

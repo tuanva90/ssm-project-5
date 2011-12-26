@@ -5,10 +5,10 @@ D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\DAO\bin\Debug\DTO.dll
 D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\DAO\bin\Debug\DTO.pdb
 D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\DAO\obj\Debug\DAO.dll
 D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\DAO\obj\Debug\DAO.pdb
-D:\001\project\googlecode\sms_project\SSM_WebServices\DAO\bin\Debug\DAO.dll
-D:\001\project\googlecode\sms_project\SSM_WebServices\DAO\bin\Debug\DAO.pdb
-D:\001\project\googlecode\sms_project\SSM_WebServices\DAO\bin\Debug\DTO.dll
-D:\001\project\googlecode\sms_project\SSM_WebServices\DAO\bin\Debug\DTO.pdb
-D:\001\project\googlecode\sms_project\SSM_WebServices\DAO\obj\Debug\ResolveAssemblyReference.cache
-D:\001\project\googlecode\sms_project\SSM_WebServices\DAO\obj\Debug\DAO.dll
-D:\001\project\googlecode\sms_project\SSM_WebServices\DAO\obj\Debug\DAO.pdb
+E:\ASP\SSM_Webservices\DAO\bin\Debug\DAO.dll
+E:\ASP\SSM_Webservices\DAO\bin\Debug\DAO.pdb
+E:\ASP\SSM_Webservices\DAO\bin\Debug\DTO.dll
+E:\ASP\SSM_Webservices\DAO\bin\Debug\DTO.pdb
+E:\ASP\SSM_Webservices\DAO\obj\Debug\ResolveAssemblyReference.cache
+E:\ASP\SSM_Webservices\DAO\obj\Debug\DAO.dll
+E:\ASP\SSM_Webservices\DAO\obj\Debug\DAO.pdb

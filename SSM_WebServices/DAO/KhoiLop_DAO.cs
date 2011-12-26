@@ -13,11 +13,12 @@ namespace DAO
         
         public int Insert(KhoiLopDTO Kl)
         {
-            string sql = "insert into KHOILOP values (@MaKhoiLop,@TenKhoiLop,@SoLop)";
-            SqlParameter[] sp = new SqlParameter[3];
+            string sql = "insert into KHOILOP values (@MaKhoiLop,@TenKhoiLop,@SoLop,@MaNam)";
+            SqlParameter[] sp = new SqlParameter[4];
             sp[0] = new SqlParameter("@MaKhoiLop", Kl.MaKhoiLop);
             sp[1] = new SqlParameter("@TenKhoiLop", Kl.TenKhoiLop);
             sp[2] = new SqlParameter("@SoLop", Kl.SoLop);
+            sp[3] = new SqlParameter("@MaNam", Kl.MaNam);
             return conectData.Insert_Update_Delete(sql, sp);
         }
         
@@ -39,14 +40,30 @@ namespace DAO
             sp[1] = new SqlParameter("@SoLop", solop);
             return conectData.Insert_Update_Delete(sql, sp);
         }
-            
+        public string get_MaKhoi(string manam)
+        {
+            string sql = "select MaKhoiLop from KHOILOP where MaNam = @MaNam";
+            DataTable dt = new DataTable();
+            SqlParameter sp = new SqlParameter("@MaNam", manam);
+            dt = conectData.LoadData(sql, sp);
+            dt.TableName = "dts";
+            return dt.Rows[0][0].ToString();
+        }
         public int Delete(string makhoilop)
         {
             string sql = "delete from KHOILOP where MaKhoiLop=@MaKhoiLop";
             SqlParameter sp = new SqlParameter("@MaKhoiLop", makhoilop);
             return conectData.Insert_Update_Delete(sql, sp);
         }
-        
+        public DataTable ListbyMaNam(string manam)
+        {
+            string sql = "select MaKhoiLop as 'Mã khối',TenKhoiLop as 'Tên khối',SoLop as 'Số lớp' from KHOILOP where MaNam=@manam";
+            DataTable dt = new DataTable();
+            SqlParameter sp = new SqlParameter("@manam",manam);
+            dt = conectData.LoadData(sql,sp);
+            dt.TableName = "dts";
+            return dt;
+        }
         public DataTable List()
         {
             string sql = "select MaKhoiLop as 'Mã khối',TenKhoiLop as 'Tên khối',SoLop as 'Số lớp' from KHOILOP";
@@ -56,10 +73,25 @@ namespace DAO
             return dt;
         }
         string kq;
+
+////Create by TuanVA
+
+//        public DataTable ListbyMaNam(string MaNam)
+//        {
+//            string sql = "select MaKhoiLop as 'Mã khối',TenKhoiLop as 'Tên khối',SoLop as 'Số lớp' from KHOILOP where MaNam = @MaNam";
+//            SqlParameter sp = new SqlParameter("@MaNam", MaNam);
+//            DataTable dt = new DataTable();
+//            dt = conectData.LoadData(sql, sp);
+//            dt.TableName = "dts";
+//            return dt;
+//        }
+
+
+////End by TuanVA
         
         public string getMa() // lay ma mon
         {
-            string sql = " SELECT MAX(cast(substring(MaKhoiLop32,2) as int)) FROM KHOILOP ";
+            string sql = " SELECT MAX(cast(substring(MaKhoiLop,3,2) as int)) FROM KHOILOP ";
             DataTable dt = new DataTable();
             dt = conectData.LoadData(sql);
             if (dt.Rows[0][0].ToString() == "" || dt.Rows[0][0].ToString() == "NULL")

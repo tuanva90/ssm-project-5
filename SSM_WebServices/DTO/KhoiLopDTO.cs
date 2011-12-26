@@ -28,6 +28,12 @@ namespace DTO
             get { return _SoLop; }
             set { _SoLop = value; }
         }
+        private string _MaNam;
+        public string MaNam
+        {
+            get { return _MaNam; }
+            set { _MaNam = value; }
+        }
         //public KhoiLopDTO(string _makhoilop, string _tenkhoilop, int _solop)
         //{
         //    _MaKhoiLop = _makhoilop;

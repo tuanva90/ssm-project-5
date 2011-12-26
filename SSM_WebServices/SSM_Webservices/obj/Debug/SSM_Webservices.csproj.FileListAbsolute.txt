@@ -7,12 +7,12 @@ D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\SSM_Webservices\bin\DTO.pdb
 D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\SSM_Webservices\obj\Debug\SSM_Webservices.dll
 D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\SSM_Webservices\obj\Debug\SSM_Webservices.pdb
 D:\study\ky 7\Lap trinh web\SSM_Serv\SSM_Webservices\SSM_Webservices\bin\DTO.dll
-D:\001\project\googlecode\sms_project\SSM_WebServices\SSM_Webservices\bin\SSM_Webservices.dll
-D:\001\project\googlecode\sms_project\SSM_WebServices\SSM_Webservices\bin\SSM_Webservices.pdb
-D:\001\project\googlecode\sms_project\SSM_WebServices\SSM_Webservices\bin\DAO.dll
-D:\001\project\googlecode\sms_project\SSM_WebServices\SSM_Webservices\bin\DTO.dll
-D:\001\project\googlecode\sms_project\SSM_WebServices\SSM_Webservices\bin\DAO.pdb
-D:\001\project\googlecode\sms_project\SSM_WebServices\SSM_Webservices\bin\DTO.pdb
-D:\001\project\googlecode\sms_project\SSM_WebServices\SSM_Webservices\obj\Debug\ResolveAssemblyReference.cache
-D:\001\project\googlecode\sms_project\SSM_WebServices\SSM_Webservices\obj\Debug\SSM_Webservices.dll
-D:\001\project\googlecode\sms_project\SSM_WebServices\SSM_Webservices\obj\Debug\SSM_Webservices.pdb
+E:\ASP\SSM_Webservices\SSM_Webservices\bin\SSM_Webservices.dll
+E:\ASP\SSM_Webservices\SSM_Webservices\bin\SSM_Webservices.pdb
+E:\ASP\SSM_Webservices\SSM_Webservices\bin\DAO.dll
+E:\ASP\SSM_Webservices\SSM_Webservices\bin\DTO.dll
+E:\ASP\SSM_Webservices\SSM_Webservices\bin\DAO.pdb
+E:\ASP\SSM_Webservices\SSM_Webservices\bin\DTO.pdb
+E:\ASP\SSM_Webservices\SSM_Webservices\obj\Debug\ResolveAssemblyReference.cache
+E:\ASP\SSM_Webservices\SSM_Webservices\obj\Debug\SSM_Webservices.dll
+E:\ASP\SSM_Webservices\SSM_Webservices\obj\Debug\SSM_Webservices.pdb
