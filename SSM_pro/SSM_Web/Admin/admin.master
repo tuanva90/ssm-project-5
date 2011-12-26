@@ -250,8 +250,10 @@
 				<div class="box">
 					<!-- box / title -->
 					<div class="title">
-						<h5>Quản Lý Học Sính</h5>
-						<div class="search">
+						<h5>
+                            <asp:Label ID="page_title" runat="server" Text="Quản Lý Học Sính"></asp:Label>
+                        </h5>
+					<div class="search">
 							<form action="#" method="post">
 								<div class="input">
 									<input type="text" id="search" name="search" />
