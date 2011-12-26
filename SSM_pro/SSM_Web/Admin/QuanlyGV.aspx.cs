@@ -25,7 +25,8 @@ public partial class Admin_QuanlyGV : System.Web.UI.Page
             ddlmato.DataSource = tobus.List();
            ddlmato.DataBind();
         }
-
+        Label lb = (Label)Master.FindControl("page_title");
+        lb.Text = "Quản Lý Giáo Viên";
     }
     protected void btnUpdate_Click(object sender, EventArgs e)
     {
