@@ -26,6 +26,7 @@ public partial class Admin_PhanLop : System.Web.UI.Page
     public DataTable getDatatableLop()
     {
         return sv.Lop_ListbyKhoiLop(drlKhoiLopMoiLL.SelectedValue.ToString());
+        
     }
     protected void Page_Load(object sender, EventArgs e)
     {

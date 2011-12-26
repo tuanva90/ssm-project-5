@@ -83,16 +83,25 @@ namespace DAO
 
 //---Create by TuanVA
 
+        //public DataTable ListbyMaKhoi(string makhoi)//lay danh sach cac lop hoc theo khoi lop
+        //{
+        //    string sql = "select distinct l.MaLop ,l.TenLop from LOP l where l.MaKhoiLop = @MaKhoiLop";
+        //    SqlParameter sp = new SqlParameter("@MaKhoiLop", makhoi);
+        //    DataTable dt = new DataTable();
+        //    dt = conectData.LoadData(sql, sp);
+        //    dt.TableName = "dts";
+        //    return dt;
+        //}
+
         public DataTable ListbyMaKhoi(string makhoi)//lay danh sach cac lop hoc theo khoi lop
         {
-            string sql = "select distinct l.MaLop ,l.TenLop from LOP l where l.MaKhoiLop = @MaKhoiLop";
+            string sql = "select distinct l.MaLop as 'Mã Lớp' ,l.TenLop 'Tên Lớp' from LOP l where l.MaKhoiLop = @MaKhoiLop";
             SqlParameter sp = new SqlParameter("@MaKhoiLop", makhoi);
             DataTable dt = new DataTable();
             dt = conectData.LoadData(sql, sp);
             dt.TableName = "dts";
             return dt;
         }
-
 //End by TuanVA
         public DataTable Searchbymakl(string makl)// lanh danh sach lop theo ma khoi lop!
         {
