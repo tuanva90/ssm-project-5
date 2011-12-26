@@ -49,8 +49,8 @@ public class LopBUS
     public int Delete(string malop)
     { return sv.Lop_Delete(malop);
     }
-    public string SearMaKL(string malop)
+    public string SearMaKL(string malop,string manam)
     {
-        return sv.Lop_SearchMakl(malop);
+        return sv.Lop_SearchMakl(malop,manam);
     }
 }

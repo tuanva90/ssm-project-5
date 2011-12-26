@@ -33,7 +33,7 @@ public class HocBUS
     {
         int n = 0;
 
-        string makhoi = sv.Lop_SearchMakl(hoc.MaLop);
+        string makhoi = sv.Lop_SearchMakl(hoc.MaLop,manam);
         DataTable dt = sv.CT_KL_MH_List_MH_KL(manam, makhoi);
         if (dt.Rows.Count == 0)
         {

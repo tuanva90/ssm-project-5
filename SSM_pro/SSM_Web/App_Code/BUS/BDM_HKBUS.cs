@@ -75,7 +75,7 @@ public class BDM_HKBUS
         
         dt.Columns.Add("Mã HS");
         dt.Columns.Add("Họ tên");
-        DataTable monhoc = sv.CT_KL_MH_List_MH_KL(manam, sv.Lop_SearchMakl(malop));
+        DataTable monhoc = sv.CT_KL_MH_List_MH_KL(manam, sv.Lop_SearchMakl(malop,manam));
         DataTable hocsinh = sv.Hoc_getListHS_Lop(mahk, malop);
         for (int i = 0; i < monhoc.Rows.Count; i++)
         {
@@ -97,7 +97,7 @@ public class BDM_HKBUS
                 for (int i = 0; i < monhoc.Rows.Count; i++)
                 {
                     Array.Resize(ref diem, lengh + 1);
-                    diem[lengh] = ((float)Math.Round(sv.BDM_HK_getDiemTBM_HK(int.Parse(sv.Hoc_GetMaHoc(hocsinh.Rows[j]["Mã HS"].ToString(), malop, mahk).ToString()), sv.CT_KL_MH_GetMaCTKLMH(monhoc.Rows[i]["Mã môn"].ToString(), manam, sv.Lop_SearchMakl(malop).ToString())),1)).ToString();
+                    diem[lengh] = ((float)Math.Round(sv.BDM_HK_getDiemTBM_HK(int.Parse(sv.Hoc_GetMaHoc(hocsinh.Rows[j]["Mã HS"].ToString(), malop, mahk).ToString()), sv.CT_KL_MH_GetMaCTKLMH(monhoc.Rows[i]["Mã môn"].ToString(), manam, sv.Lop_SearchMakl(malop,manam).ToString())),1)).ToString();
                     lengh++;
                 }
                 if (int.Parse(mahk.Substring(3, 2).ToString()) % 2 != 0) // hk1 thi mahk la le, hocky 2 thi mahk lachan(mac dinh la vay vi hoc cu them mot nam hoc thi lai them 2 hoc ki) ( vi ham hoc_getdiemck co tham so truyen vao la ten hocky nen pai phan tich ra vay)
@@ -124,7 +124,7 @@ public class BDM_HKBUS
         DataTable result = new DataTable();
         if (sv.Hoc_GetMaHoc(mahs, malop, mahk).ToString() != "NULL") // kiem tra xem hco sinh da hoc trong nam hoc nay chua, neu chua k co thong tin gì
         {
-            DataTable monhoc = sv.CT_KL_MH_List_MH_KL(manam, sv.Lop_SearchMakl(malop));
+            DataTable monhoc = sv.CT_KL_MH_List_MH_KL(manam, sv.Lop_SearchMakl(malop,manam));
             result.Columns.Add("Môn học");
             string hk;// hanh kiem
 
@@ -146,7 +146,7 @@ public class BDM_HKBUS
                 lengh++;
                 
                 Array.Resize(ref diem, lengh + 1);
-                diem[lengh] = ((float)Math.Round(sv.BDM_HK_getDiemTBM_HK(int.Parse(sv.Hoc_GetMaHoc(mahs, malop, mahk).ToString()), sv.CT_KL_MH_GetMaCTKLMH(monhoc.Rows[i]["Mã môn"].ToString(), manam, sv.Lop_SearchMakl(malop).ToString())), 1)).ToString();
+                diem[lengh] = ((float)Math.Round(sv.BDM_HK_getDiemTBM_HK(int.Parse(sv.Hoc_GetMaHoc(mahs, malop, mahk).ToString()), sv.CT_KL_MH_GetMaCTKLMH(monhoc.Rows[i]["Mã môn"].ToString(), manam, sv.Lop_SearchMakl(malop,manam).ToString())), 1)).ToString();
                 lengh++;
           
                 result.Rows.Add(diem);
@@ -167,7 +167,7 @@ public class BDM_HKBUS
         DataTable result = new DataTable();
         if (sv.Hoc_GetMaHoc(mahs, malop, mahk).ToString() != "NULL")//kiem tra xem hoc sinh nay co hoc nam nay chua, neu chua k hien thong tin gi het
         {
-            DataTable monhoc = sv.CT_KL_MH_List_MH_KL(manam, sv.Lop_SearchMakl(malop));
+            DataTable monhoc = sv.CT_KL_MH_List_MH_KL(manam, sv.Lop_SearchMakl(malop,manam));
             result.Columns.Add("Môn học");
             result.Columns.Add("Điểm hk I");
             result.Columns.Add("Điểm hk II");
@@ -185,12 +185,12 @@ public class BDM_HKBUS
                     lengh++;
                     mahk = sv.HocKy_GetMaHK(manam, "I");//hoc ky 1
                     Array.Resize(ref diem, lengh + 1);
-                    float diemk1 = ((float)Math.Round(sv.BDM_HK_getDiemTBM_HK(int.Parse(sv.Hoc_GetMaHoc(mahs, malop, mahk).ToString()), sv.CT_KL_MH_GetMaCTKLMH(monhoc.Rows[i]["Mã môn"].ToString(), manam, sv.Lop_SearchMakl(malop).ToString())), 1));
+                    float diemk1 = ((float)Math.Round(sv.BDM_HK_getDiemTBM_HK(int.Parse(sv.Hoc_GetMaHoc(mahs, malop, mahk).ToString()), sv.CT_KL_MH_GetMaCTKLMH(monhoc.Rows[i]["Mã môn"].ToString(), manam, sv.Lop_SearchMakl(malop,manam).ToString())), 1));
                     diem[lengh] = diemk1.ToString();
                     lengh++;
                     mahk = sv.HocKy_GetMaHK(manam, "II");// hoc ky 2
                     Array.Resize(ref diem, lengh + 1);
-                    float diemki2 = ((float)Math.Round(sv.BDM_HK_getDiemTBM_HK(int.Parse(sv.Hoc_GetMaHoc(mahs, malop, mahk).ToString()), sv.CT_KL_MH_GetMaCTKLMH(monhoc.Rows[i]["Mã môn"].ToString(), manam, sv.Lop_SearchMakl(malop).ToString())), 1));
+                    float diemki2 = ((float)Math.Round(sv.BDM_HK_getDiemTBM_HK(int.Parse(sv.Hoc_GetMaHoc(mahs, malop, mahk).ToString()), sv.CT_KL_MH_GetMaCTKLMH(monhoc.Rows[i]["Mã môn"].ToString(), manam, sv.Lop_SearchMakl(malop,manam).ToString())), 1));
                     diem[lengh] = diemki2.ToString();
                     lengh++;
                     Array.Resize(ref diem, lengh + 1);

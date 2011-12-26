@@ -26,18 +26,11 @@ public partial class Admin_QuanLyPhanLop : System.Web.UI.Page
         if (!IsPostBack)
         {
             DataTable dt = nhbus.List();
-            try
-            {
-                ddnamhoc.DataSource = sv.NamHoc_List();
+                  ddnamhoc.DataSource = sv.NamHoc_List();
                 ddnamhoc.DataBind();
                 gvhocsinh.DataSource = hsbus.HSchuaphanlop(dt.Rows[0][0].ToString());
-                gvhocsinh.DataBind();
-            }
-            catch
-            {
-                lblinfor.Text = "Không có kết quả nào phù hợp!";
-            }
-          }
+                gvhocsinh.DataBind();       
+                      }
     }
     protected void ddnamhoc_SelectedIndexChanged(object sender, EventArgs e)
     {

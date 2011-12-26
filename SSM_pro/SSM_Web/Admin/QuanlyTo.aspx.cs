@@ -83,9 +83,17 @@ public partial class Admin_QuanlyTo : System.Web.UI.Page
     }
     protected void btntim_Click(object sender, ImageClickEventArgs e)
     {
-
+        PopUp("Default.aspx");
     }
-  
+    public void PopUp(string url)
+    {
+        string popup = "<script language='javascript'>" +
+                       "window.open('" + url + "', 'CustomPopUp', " +
+                       "'width=200, height=200, resizable=no')" +
+                       "</script>";
+
+        Page.RegisterStartupScript("Popup", popup);
+    }
     protected void gvto_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         gvto.PageIndex = e.NewPageIndex;

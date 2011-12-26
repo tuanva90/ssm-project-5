@@ -114,10 +114,6 @@ public partial class Admin_QuanlyLop : System.Web.UI.Page
     {
         return gvbus.ListGV();
     }
-    protected DataTable GetGV()
-    {
-        return sv.GiaoVien_List();
-    }
     protected int GetMaGV_index(string name)
     {
         DataTable dt = gvbus.ListGV();
@@ -151,7 +147,7 @@ public partial class Admin_QuanlyLop : System.Web.UI.Page
                 //Response.Redirect("QuanlyTo.aspx");
                 gvlop.DataSource = lopbus.SearchbyMakl(Session["index"].ToString());
                 gvlop.DataBind();
-                DropDownList dllgvcn = (DropDownList)gvlop.FooterRow.FindControl("ddlgvcn_them");
+                DropDownList dllgvcn1 = (DropDownList)gvlop.FooterRow.FindControl("ddlgvcn_them");
                 dllgvcn.DataSource = GetGV();
                 dllgvcn.DataBind();
             }

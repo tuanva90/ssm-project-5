@@ -30,6 +30,7 @@ public class NamHocBUS
    {
        SSM_Service.HocKyDTO hkdto = new SSM_Service.HocKyDTO();
        SSM_Service.HocKyDTO hkdto1 = new SSM_Service.HocKyDTO();
+       SSM_Service.KhoiLopDTO kldto = new SSM_Service.KhoiLopDTO();
           hkdto.MaHK = hk.getMa();
        hkdto.MaNam = nhdto.MaNam;
        hkdto.Ten_HocKy = "I";
@@ -42,11 +43,23 @@ public class NamHocBUS
            {
                hkdto1.MaHK = hk.getMa();
                n= hk.Insert(hkdto1);
+               
+               
+               for(int i =6;i<10;i++)
+               {
+                   kldto.TenKhoiLop = "Khối ";
+                   kldto.MaKhoiLop = sv.KLop_getMa();
+                   kldto.TenKhoiLop += i.ToString();
+                   n = sv.KLop_Insert(kldto);
+               }
+               kldto.MaNam = nhdto.MaNam;
+               kldto.SoLop = 6;
                DataTable dt = klbus.List();
                for (int i = 0; i < dt.Rows.Count; i++)
                {
                    n = klmonbus.Insert(nhdto.MaNam, dt.Rows[i][0].ToString());
                }
+               
            }
            return n;
        }

@@ -5,7 +5,7 @@
    
 </script>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <style type="text/css">
         .style18
         {
@@ -132,6 +132,11 @@
                         onselectedindexchanged="gvhocsinh_SelectedIndexChanged">
                         <RowStyle BackColor="#E3EAEB" />
                         <Columns>
+                            <asp:TemplateField HeaderText="STT">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblstt" runat="server" Text='<%# Eval("STT") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:TemplateField HeaderText="Mã học sinh" InsertVisible="False">
                                 <ItemTemplate>
                                     <asp:Label ID="lblmahs" runat="server" CssClass="style9" 
