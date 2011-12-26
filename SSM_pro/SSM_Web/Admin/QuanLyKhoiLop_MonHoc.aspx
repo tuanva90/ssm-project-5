@@ -2,7 +2,7 @@
 
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="QuanLyKhoiLop" Runat="Server">
     <style type="text/css">
         .style18
         {
