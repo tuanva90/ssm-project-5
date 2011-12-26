@@ -1,70 +1,156 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="Admin_admin" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Untitled Page</title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
-     <link rel="stylesheet" type="text/css" href="skin/default.css" />
+    <title>Quản Lý Học Sinh</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css" media="all">
+		@import url(css/style.css);
+		img {behavior:url('js/iepngfix.htc') !important;}
+	</style>	
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/jquery_ui.js" type="text/javascript"></script>
+	<script src="js/wysiwyg.js" type="text/javascript"></script>
+	<script src="js/functions.js" type="text/javascript"></script>
 </head>
 <body>
-<div id="header">
-	<h1>Quản Lý Học Sinh</h1>
-	<div id="menu">
-	    <ul>
-		<li><a href="#"><span>Home</span></a></li>
-		<li><a href="##"><span>Giáo Viên</span></a></li>
-		<li><a href="###"><span>Học Sinh</span></a></li>
-		<li><a href="####"><span>Liên hệ</span></a></li>
-		
-	</ul>
-	</div>
-	<div id="layoutdims">
-	    <p>Chào bạn: <strong>Đình Bảo</strong></p>
-	</div>
-</div>
-<div class="colmask leftmenu">
-	<div class="colleft">
-		<div class="col1">
-			<!-- Column 1 start -->
-			<form id="form1" runat="server">
+<div id="container"> <!-- Container -->
+	<div id="header"> <!-- Header -->
+		<div id="title">
+			Quản Lý Học Sinh
+			<span>UIT Secondary School</span>
+		</div>
+		<div class="logged">
+			<p>Chào, <a href="#" title="">Đình Bảo</a>!</p>
+			<p><a href="#">My Account</a> | <a href="#" target="_blank">Đăng Xuất</a></p>
+			<p>Bạn có <a href="#">12 lá thư chưa đọc</a>!</p>
+		</div>
+	</div>	
+	<div id="sidebar"> <!-- Sidebar -->
+		<div class="sidebox">
+			<span class="stitle">Navigation</span>
+		<div id="navigation"> <!-- Navigation begins here -->
+			<div class="sidenav"><!-- Sidenav -->
+				<div class="navhead_blank"><span><a href="#" title="">Dashboard</a></span></div>
+				<div class="navhead"><span>Articles</span></div>
+					<div class="subnav">
+						<ul class="submenu">
+							<li><a href="#" title="">Write a new Article</a></li>
+							<li><a href="#" title="">Manage Articles</a></li>
+							<li><a href="#" title="">Manage Comments</a></li>
+							<li><a href="#" title="">Manage Categories</a></li>
+						</ul>
+					</div>
+				<div class="navhead"><span>Events Calendar</span></div>
+					<div class="subnav">
+						<ul class="submenu">
+							<li><a href="#" title="">Submenu Item 1</a></li>
+							<li><a href="#" title="">Submenu Item 2</a></li>
+							<li><a href="#" title="">Submenu Item 3</a></li>
+						</ul>
+					</div>
+				<div class="navhead"><span>Pages</span></div>
+					<div class="subnav">
+						<ul class="submenu">
+							<li><a href="#" title="">Submenu Item 1</a></li>
+							<li><a href="#" title="">Submenu Item 2</a></li>
+							<li><a href="#" title="">Submenu Item 3</a></li>
+							<li><a href="#" title="">Submenu Item 4</a></li>
+						</ul>
+					</div>
+					<div class="navhead"><span>Image Gallery</span></div>
+					<div class="subnav">
+						<ul class="submenu">
+							<li><a href="#" title="">Submenu Item 1</a></li>
+							<li><a href="#" title="">Submenu Item 2</a></li>
+							<li><a href="#" title="">Submenu Item 3</a></li>
+						</ul>
+					</div>
+				<div class="navhead"><span>Settings</span></div>
+					<div class="subnav">
+						<ul class="submenu">
+							<li><a href="#" title="">Submenu Item 1</a></li>
+							<li><a href="#" title="">Submenu Item 2</a></li>
+							<li><a href="#" title="">Submenu Item 3</a></li>
+						</ul>
+					</div>
+			</div>
+		</div> <!-- END Navigation -->
+		</div>
+		<div class="sidebox">
+			<span class="stitle">Additional Panel</span>
+			<div id="datepicker"></div>
+
+		</div>
+	</div> <!-- END Sidebar -->
+	<div id="main"> <!-- Main, right side content -->
+		<div id="content"> <!-- Content begins here -->
+			<ul class="modals">
+					<li>
+						<a href="#">
+							<img src="iconsee/pencil_48.png" alt="Write an article" />
+							<span>Write an article</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="iconsee/diagram_48.png" alt="View statistics" />
+							<span>View statistics</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="iconsee/letter_48.png" alt="Check inbox" />
+							<span>Check inbox</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="iconsee/clipboard_48.png" alt="To-do list" />
+							<span>Todo list</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="iconsee/gear_48.png" alt="Settings" />
+							<span>Settings</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="iconsee/save_48.png" alt="Save this!" />
+							<span>Save this!</span>
+						</a>
+					</li>
+				</ul>
+			<div class="clear"><!-- --></div>
+            <form id="form1" runat="server">
                 <div>
-                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-
-                </asp:ContentPlaceHolder>
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                  </asp:ContentPlaceHolder>
                 </div>
-            </form>
-			<!-- Column 1 end -->
-		</div>
-		<div class="col2">
-			<!-- Column 2 start -->
-			<h3>Mac</h3>
-			<ul>
-				<li>Safari</li>
-				<li>Firefox</li>
-				<li>Opera 9.25</li>
-				<li>Netscape 9.0.0.5 &amp; 7.1</li>
-			</ul>
-			<h3>Windows</h3>
-			<ul>
-				<li>Firefox 1.5, 2 &amp; 3</li>
-				<li>Safari</li>
-				<li>Opera 8.1 &amp; 9</li>
-				<li>Google Chrome</li>
-				<li>Explorer 5.5, 6 &amp; 7</li>
-				<li>Netscape 8</li>
-
-			</ul>
-			
-			<!-- Column 2 end -->
-		</div>
-	</div>
-</div>
-<div id="footer">
-	<p>Copyright &copy;hikaruit15@gmail.com</p>
-</div>
+             </form>
+			<!-- The paginator -->
+			<ul class="paginator">
+					<li><a href="#">Previous</a></li>
+					<li class="current"><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">6</a></li>
+					<li><a href="#">7</a></li>
+					<li><a href="#">8</a></li>
+					<li><a href="#">9</a></li>
+					<li><a href="#">Next</a></li>
+				</ul>
+			<!-- Paginator end -->
+		</div> <!-- END Content -->
+	</div> 	
+	<div id="footer"> 
+			<p>Copyright &copy; <a href="#">UIT_BKT3</a> 2011. All rights reserved.</p>
+		</div>	
+</div> <!-- END Container -->
 </body>
 </html>
-
