@@ -23,6 +23,8 @@ public partial class Admin_Default2 : System.Web.UI.Page
             gvdshs.DataSource = hsbus.ListHS();
             gvdshs.DataBind();
         }
+        Label lb = (Label)Master.FindControl("page_title");
+        lb.Text = "Quản Lý Học Sinh";
     }
     
     protected void btnAddNew_Click(object sender, EventArgs e)
