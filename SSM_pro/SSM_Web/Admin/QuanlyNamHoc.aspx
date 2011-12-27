@@ -1,103 +1,10 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Admin/admin.master" AutoEventWireup="true" CodeFile="QuanlyNamHoc.aspx.cs" Inherits="Admin_QuanlyNamHoc" Title="Untitled Page" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <style type="text/css">
-        .style9
-        {
-            text-align:center;
-        }
-           .style10
-         {
-            text-align:center;
-            width:80px;
-         }
-        .style13
-        {
-           width: 700px;
-            margin-top: 0px;
-            text-align:center;
-        }
-        .style14
-        {
-            font-size: large;
-            font-weight: bold;
-            color: #FFFFFF;
-        }
-        .style18
-        {
-            font-size: 22pt;
-            font-weight: bold;
-            color: #0000FF;
-        }
-        .style1
-        {
-           text-align:right;
-        }
-             
-.dxeButtonEdit
-{
-    background-color: white;
-    border: solid 1px #9F9F9F;
-    width: 170px;
-}
-        
-.dxeButtonEdit
-{
-    background-color: white;
-    border: solid 1px #9F9F9F;
-    width: 170px;
-}
-
-.dxeEditArea 
-{
-	font-family: Tahoma;
-	font-size: 9pt;
-	border: 1px solid #A0A0A0;
-}
-
-.dxeEditArea 
-{
-	font-family: Tahoma;
-	font-size: 9pt;
-	border: 1px solid #A0A0A0;
-}
-.dxeButtonEditButton,
-.dxeSpinIncButton, .dxeSpinDecButton, .dxeSpinLargeIncButton, .dxeSpinLargeDecButton
-{
-    padding: 0px 2px 0px 3px;
-	    background-repeat: repeat-x;
-    background-position: top;    
-    background-color: #e6e6e6;
-}
-.dxeButtonEditButton, .dxeCalendarButton,
-.dxeSpinIncButton, .dxeSpinDecButton,
-.dxeSpinLargeIncButton, .dxeSpinLargeDecButton
-{	
-	vertical-align: middle;
-	border: solid 1px #7f7f7f;
-	cursor: pointer;
-	cursor: hand;
-} 
-.dxeButtonEditButton
-{	
-	vertical-align: middle;
-	border: solid 1px #7f7f7f;
-	cursor: pointer;
-	cursor: hand;
-} 
-        .dxeButtonEditButton
-{
-    padding: 0px 2px 0px 3px;
-	    background-repeat: repeat-x;
-    background-position: top;    
-    background-color: #e6e6e6;
-}
-        </style>
-    <p class="style18" style="text-align: center">
-        Quản lý năm học</p>
-    <table align="center" class="style9">
+    
+    <table  align="center" width="700px" style="text-align: center; border: 0px none #ffffff;">
         <tr>
-            <td style="text-align: center">
+            <td  style="text-align: center; border: 0px none #ffffff;">
                 <asp:DropDownList ID="ddltim" runat="server" Height="25px">
                     <asp:ListItem Value="MaNam">Tìm theo mã năm</asp:ListItem>
                     <asp:ListItem Value="NamHoc">Tìm theo tên năm học</asp:ListItem>
@@ -111,7 +18,7 @@
     </table>
     <br />
                 <br />
-    <div align =center>
+    <div align="center">
                         <asp:GridView ID="gvnamhoc" runat="server" AllowPaging="True" 
                         AutoGenerateColumns="False" CellPadding="4" CssClass="style13" 
                         DataKeyNames="Mã năm" ForeColor="#333333" GridLines="None" 
@@ -196,41 +103,35 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </EmptyDataTemplate>
                         <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" 
+                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="Black" 
                             HorizontalAlign="Center" />
                         <EditRowStyle BackColor="#7C6F57" HorizontalAlign="Center" Height="24px" />
-                        <AlternatingRowStyle BackColor="White" />
+                        <AlternatingRowStyle BackColor="Black" />
                     </asp:GridView>
                 </div>
 
     <p>
     <br />
-        <asp:MultiView ID="MultiView2" runat="server">
+        <div class="table" align="center">
+            <asp:MultiView ID="MultiView2" runat="server">
             <asp:View ID="View2" runat="server">
-                <table align="center" class="style13">
-                    <tr>
-                        <td class="style14" style="text-align: center; background-color: #0000FF" 
-                            width="650px">
-                            Thông tin năm học</td>
-                    </tr>
-                    <tr>
-                        <td align="center" style="text-align: center">
-                        <div align=center>
+                    <asp:Label ID="Label9" runat="server" Width="600px" >
+                        <div class="title"><h6>Thông tin năm học</h6></div>
+                    </asp:Label>
+                    
+                    <div align=center>
                             <asp:GridView ID="dthk" runat="server" BackColor="White" BorderColor="#3366CC" 
                                 BorderStyle="None" BorderWidth="1px" CellPadding="4" Width="600px">
                                 <RowStyle BackColor="White" ForeColor="#003399" CssClass="style9" />
                                 <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
                                 <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
                                 <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                                <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                                <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#000000" />
                             </asp:GridView>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                    </div>
             </asp:View>
         </asp:MultiView>
-</p>
+        </div>
     </asp:Content>
 
 

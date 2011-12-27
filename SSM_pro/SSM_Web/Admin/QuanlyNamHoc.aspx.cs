@@ -25,6 +25,8 @@ public partial class Admin_QuanlyNamHoc : System.Web.UI.Page
             gvnamhoc.DataSource = nhbus.List();
             gvnamhoc.DataBind();
         }
+        Label lb = (Label)Master.FindControl("page_title");
+        lb.Text = "Quản Lý Năm Học";
     }
 
       protected void gvnamhoc_RowEditing(object sender, GridViewEditEventArgs e)
