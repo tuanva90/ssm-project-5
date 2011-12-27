@@ -95,9 +95,9 @@
             <asp:View ID="View2" runat="server">
                 <div align="center">
                     <br />
-                    <table align="center" class="style9">
+                    <table align="center" width="700px" style="text-align: center; border: 0px none #ffffff;">
                         <tr>
-                            <td style="text-align: center">
+                            <td style="text-align: center; border: 0px none #ffffff;">
                                 <asp:DropDownList ID="ddltim" runat="server" Height="25px">
                                     <asp:ListItem Value="MaTo">Tìm theo mã tổ</asp:ListItem>
                                     <asp:ListItem Value="TenTo">Tìm theo tên tổ</asp:ListItem>
@@ -194,7 +194,7 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </EmptyDataTemplate>
                         <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" 
+                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="Black" 
                             HorizontalAlign="Center" />
                         <EditRowStyle BackColor="#7C6F57" HorizontalAlign="Center" />
                         <AlternatingRowStyle BackColor="White" />
@@ -304,7 +304,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </EmptyDataTemplate>
                     <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" 
+                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="Black" 
                         HorizontalAlign="Center" />
                     <EditRowStyle BackColor="#7C6F57" HorizontalAlign="Center" />
                     <AlternatingRowStyle BackColor="White" />
