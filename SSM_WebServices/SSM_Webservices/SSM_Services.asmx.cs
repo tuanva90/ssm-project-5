@@ -249,15 +249,20 @@ public class SSM_Services : System.Web.Services.WebService
     {
         return lopdao.ListbyNamHoc(namhoc);
     }
-    [WebMethod]
-    public string Lop_getTenLop(string malop)
-    {
-        return lopdao.getTenLop(malop);
-    }
+
+//Create by TuanVA
+
     [WebMethod]
     public DataTable Lop_ListbyKhoiLop(string makhoilop)
     {
         return lopdao.ListbyMaKhoi(makhoilop);
+    }
+
+//End by TuanVA
+    [WebMethod]
+    public string Lop_getTenLop(string malop)
+    {
+        return lopdao.getTenLop(malop);
     }
     /*
      * kiem tra trung ten lop hay khong, truyen vao ten lop
@@ -449,7 +454,7 @@ public class SSM_Services : System.Web.Services.WebService
     //Create TuanVA
 
     [WebMethod]
-    public DataTable HocSinh_listHSDuocLenLen(string MaKhoiLop_Cu) // lay danh sach hoc sinh dc len lop theo nam hoc cu
+    public DataTable HocSinh_listHSDuocLenLop(string MaKhoiLop_Cu) // lay danh sach hoc sinh dc len lop theo nam hoc cu
     {
         return hsdao.listHSDuocLenLop(MaKhoiLop_Cu);
     }
@@ -484,7 +489,7 @@ public class SSM_Services : System.Web.Services.WebService
         return hsdao.KiemTraLenLop(MaHS, MaNam);
     }
 
-    //END BY TUANVA
+
 
     [WebMethod] // lay danh sach taat ca hoc sinh
     public DataTable HocSinh_List()
@@ -507,6 +512,32 @@ public class SSM_Services : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public int HocSinh_LenCap_ThemMoi(string MaHS, string HoTen, int GioiTinh, string SoDienThoai, string HoTenCha, string NgheNghiepCha, string HoTenMe, string NgheNghiepMe, string NgaySinh, string DiaChi, float DTB, string HanhKiem)
+    {
+        HocSinhDTO Hs = new HocSinhDTO();
+        Hs.MaHS = MaHS;
+        Hs.HoTen = HoTen;
+        Hs.GioiTinh = GioiTinh;
+        Hs.SoDienThoai = SoDienThoai;
+        Hs.HoTenCha = HoTenCha;
+        Hs.NgheNghiepCha = NgheNghiepCha;
+        Hs.HoTenMe = HoTenMe;
+        Hs.NgheNghiepMe = NgheNghiepMe;
+        Hs.NgaySinh = NgaySinh;
+        Hs.DiaChi = DiaChi;
+        int kq = hsdao.Insert(Hs);
+
+        HocSinh_LenCapDTO Hs_lc = new HocSinh_LenCapDTO();
+        Hs_lc.MaHS_LC = MaHS;
+        Hs_lc.MaHS = MaHS;
+        Hs_lc.DTB = (float)Math.Round(DTB, 2);
+        Hs_lc.HanhKiem = HanhKiem;
+        Hs_lc.DaPhanLop = 1;
+        kq = hs_lcdao.Insert(Hs_lc);
+        return kq;
+    }
+
+    [WebMethod]
     public int HocSinh_LenCap_Insert(HocSinh_LenCapDTO Hs_lc)
     {
         return hs_lcdao.Insert(Hs_lc);
@@ -519,24 +550,25 @@ public class SSM_Services : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public int PhanLopTuDong_getsiso(string makhoilop)
+    public int HocSinh_LenCap_PhanLopTuDong_getsiso(string makhoilop)
     {
         return hs_lcdao.PhanLopTuDong_getsiso(makhoilop);
     }
 
     [WebMethod]
-    public int PhanLopTuDong(string manam, string makhoilop)
+    public int HocSinh_LenCap_PhanLopTuDong(string manam, string makhoilop)
     {
         return hs_lcdao.PhanLopTuDong(manam, makhoilop);
     }
 
     [WebMethod]
-    public int PhanLopThuCong(string MaHS, string MaLop)
+    public int HocSinh_LenCap_PhanLopThuCong(string MaHS, string MaLop)
     {
         return hs_lcdao.PhanLopThuCong(MaHS, MaLop);
     }
 
     #endregion
+    //END BY TUANVA
 
     #region Cac ham xu ly GiaoVien (GiaoVienDAO)
     GiaoVien_DAO gvdao = new GiaoVien_DAO();
