@@ -168,8 +168,7 @@
 				<div id="menu">
 					<h6 id="h-menu-danhmuc" class="selected"><a href="#danhmuc"><span>Danh Mục</span></a></h6>
 					<ul id="menu-danhmuc" class="opened">
-						<li><a href="">Danh mục tổ chuyên môn</a></li>
-						<li><a href="" class="last">Danh mục môn học</a></li>
+						<li><a href="QuanlyTo.aspx">Danh mục tổ chuyên môn</a></li>
 					</ul>
 					<h6 id="h-menu-giaovien"><a href="#giaovien"><span>Giáo Viên</span></a></h6>
 					<ul id="menu-giaovien" class="closed">
@@ -177,14 +176,14 @@
 						<li class="collapsible last">
 							<a href="#" class="plus">Nhập giáo viên</a>
 							<ul class="collapsed">
-								<li><a href="">Nhập trực tiếp</a></li>
+								<li><a href="QuanlyGV.aspx">Nhập trực tiếp</a></li>
 								<li class="last"><a href="">Nhập từ file Excel</a></li>
 							</ul>
 						</li>
 					</ul>
 					<h6 id="h-menu-hocsinh"><a href="#hocsinh"><span>Học Sinh</span></a></h6>
 					<ul id="menu-hocsinh" class="closed">
-						<li><a href="">Cập nhật hồ sơ</a></li>
+						<li><a href="">QuanlyHS.aspx</a></li>
 						<li><a href="">Nạp danh sách từ file Excel</a></li>
 						<li><a href="">Học sinh chuyển lớp</a></li>
 						<li><a href="">Học sinh bỏ học</a></li>
@@ -194,12 +193,11 @@
 					</ul>
 					<h6 id="h-menu-cvdaunam"><a href="#cvdaunam"><span>Công Việc Đầu Năm</span></a></h6>
 					<ul id="menu-cvdaunam" class="closed">
-						<li><a href="">Khai báo năm học</a></li>
-						<li><a href="">Quy định khối - môn học</a></li>
-						<li><a href="">Danh sách các lớp học</a></li>
-						<li><a href="">Quy định hệ số môn</a></li>
-						<li><a href="">Chuyển học sinh từ lớp cũ lên lớp mới</a></li>
-						<li><a href="">Phân lớp học sinh lưu ban</a></li>
+						<li><a href="QuanlyNamHoc.aspx">Khai báo năm học</a></li>
+						<li><a href="QuanLyKhoiLop_MonHoc.aspx">Quy định khối - môn học</a></li>
+						<li><a href="QuanLyLop.aspx">Quản lý lớp</a></li>
+						<li><a href="PhanLop.aspx">Chuyển học sinh từ lớp cũ lên lớp mới</a></li>
+						<li><a href="PhanLop.aspx">Phân lớp học sinh lưu ban</a></li>
 						<li class="last"><a href="">Xếp lớp học sinh chuyển cấp</a></li>
 					</ul>
 					<h6 id="h-menu-cvhocky"><a href="#cvhocky"><span>Công Việc Học Kỳ</span></a></h6>
@@ -207,7 +205,7 @@
 						<li class="collapsible">
 							<a href="#" class="plus">Nhập điểm</a>
 							<ul class="collapsed">
-								<li><a href="">Nhập trực tiếp</a></li>
+								<li><a href="QuanLyDiemHK.aspx">Nhập trực tiếp</a></li>
 								<li><a href="">Nhập từ file Excel</a></li>
 								<li class="last"><a href="">Xuất ra file Excel</a></li>
 							</ul>
@@ -215,7 +213,7 @@
 						<li class="collapsible last">
 							<a href="#" class="plus">Nhập hạnh kiểm</a>
 							<ul class="collapsed">
-								<li><a href="">Nhập trực tiếp</a></li>
+								<li><a href="DiemTKCuoiKy.aspx">Nhập trực tiếp</a></li>
 								<li><a href="">Nhập từ file Excel</a></li>
 								<li class="last"><a href="">Xuất ra file Excel</a></li>
 							</ul>
@@ -267,7 +265,7 @@
 					<!-- end box / title -->
 					<div class="table">
 						<form id="form1" runat="server">
-                            <div align="center">
+                            <div>
                                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                                 </asp:ContentPlaceHolder>
                             </div>
