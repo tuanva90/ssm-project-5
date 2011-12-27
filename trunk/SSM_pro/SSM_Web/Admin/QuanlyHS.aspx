@@ -5,9 +5,9 @@
 <%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.1, Version=9.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <table align="center" class="style9">
+    <table  align="center" width="700px" style="text-align: center; border: 0px none #ffffff;">
         <tr>
-            <td style="text-align: center">
+            <td style="text-align: center; border: 0px none #ffffff;">
                 <asp:DropDownList ID="ddltim" runat="server" Height="25px">
                     <asp:ListItem Value="MaHS">Tìm theo mã học sinh</asp:ListItem>
                     <asp:ListItem Value="HoTen">Tìm theo tên học sinh</asp:ListItem>
