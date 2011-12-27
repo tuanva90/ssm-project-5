@@ -115,7 +115,7 @@
                         <asp:GridView ID="gvnamhoc" runat="server" AllowPaging="True" 
                         AutoGenerateColumns="False" CellPadding="4" CssClass="style13" 
                         DataKeyNames="Mã năm" ForeColor="#333333" GridLines="None" 
-                        ShowFooter="True" Width="698px" Height="278px" 
+                        ShowFooter="True" Width="698px" Height="267px" 
                             onpageindexchanging="gvnamhoc_PageIndexChanging" 
                             onrowcancelingedit="gvnamhoc_RowCancelingEdit" 
                             onrowdeleting="gvnamhoc_RowDeleting" onrowediting="gvnamhoc_RowEditing" 

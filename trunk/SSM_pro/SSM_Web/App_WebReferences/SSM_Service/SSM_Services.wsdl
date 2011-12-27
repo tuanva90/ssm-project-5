@@ -2,6 +2,20 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GiaoVien_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="magv" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GiaoVien_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GiaoVien_DeleteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GiaoVien_SearchbyName">
         <s:complexType>
           <s:sequence>
@@ -1554,20 +1568,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="Lop_getTenLop">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="malop" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Lop_getTenLopResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Lop_getTenLopResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="Lop_ListbyKhoiLop">
         <s:complexType>
           <s:sequence>
@@ -1586,6 +1586,20 @@
                 </s:sequence>
               </s:complexType>
             </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lop_getTenLop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="malop" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lop_getTenLopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Lop_getTenLopResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2033,17 +2047,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="HocSinh_listHSDuocLenLen">
+      <s:element name="HocSinh_listHSDuocLenLop">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="MaKhoiLop_Cu" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="HocSinh_listHSDuocLenLenResponse">
+      <s:element name="HocSinh_listHSDuocLenLopResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_listHSDuocLenLenResult">
+            <s:element minOccurs="0" maxOccurs="1" name="HocSinh_listHSDuocLenLopResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -2184,6 +2198,31 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="HocSinh_LenCap_ThemMoi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoTen" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="GioiTinh" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SoDienThoai" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoTenCha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NgheNghiepCha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoTenMe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NgheNghiepMe" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NgaySinh" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DiaChi" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DTB" type="s:float" />
+            <s:element minOccurs="0" maxOccurs="1" name="HanhKiem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HocSinh_LenCap_ThemMoiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_ThemMoiResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="HocSinh_LenCap_Insert">
         <s:complexType>
           <s:sequence>
@@ -2221,21 +2260,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PhanLopTuDong_getsiso">
+      <s:element name="HocSinh_LenCap_PhanLopTuDong_getsiso">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="makhoilop" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PhanLopTuDong_getsisoResponse">
+      <s:element name="HocSinh_LenCap_PhanLopTuDong_getsisoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="PhanLopTuDong_getsisoResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_PhanLopTuDong_getsisoResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PhanLopTuDong">
+      <s:element name="HocSinh_LenCap_PhanLopTuDong">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="manam" type="s:string" />
@@ -2243,14 +2282,14 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PhanLopTuDongResponse">
+      <s:element name="HocSinh_LenCap_PhanLopTuDongResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="PhanLopTuDongResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_PhanLopTuDongResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PhanLopThuCong">
+      <s:element name="HocSinh_LenCap_PhanLopThuCong">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="MaHS" type="s:string" />
@@ -2258,10 +2297,10 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PhanLopThuCongResponse">
+      <s:element name="HocSinh_LenCap_PhanLopThuCongResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="PhanLopThuCongResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="HocSinh_LenCap_PhanLopThuCongResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2293,22 +2332,14 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GiaoVien_Delete">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="magv" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GiaoVien_DeleteResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="GiaoVien_DeleteResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="GiaoVien_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:GiaoVien_Delete" />
+  </wsdl:message>
+  <wsdl:message name="GiaoVien_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:GiaoVien_DeleteResponse" />
+  </wsdl:message>
   <wsdl:message name="GiaoVien_SearchbyNameSoapIn">
     <wsdl:part name="parameters" element="tns:GiaoVien_SearchbyName" />
   </wsdl:message>
@@ -2855,17 +2886,17 @@
   <wsdl:message name="Lop_ListbyNamHocSoapOut">
     <wsdl:part name="parameters" element="tns:Lop_ListbyNamHocResponse" />
   </wsdl:message>
-  <wsdl:message name="Lop_getTenLopSoapIn">
-    <wsdl:part name="parameters" element="tns:Lop_getTenLop" />
-  </wsdl:message>
-  <wsdl:message name="Lop_getTenLopSoapOut">
-    <wsdl:part name="parameters" element="tns:Lop_getTenLopResponse" />
-  </wsdl:message>
   <wsdl:message name="Lop_ListbyKhoiLopSoapIn">
     <wsdl:part name="parameters" element="tns:Lop_ListbyKhoiLop" />
   </wsdl:message>
   <wsdl:message name="Lop_ListbyKhoiLopSoapOut">
     <wsdl:part name="parameters" element="tns:Lop_ListbyKhoiLopResponse" />
+  </wsdl:message>
+  <wsdl:message name="Lop_getTenLopSoapIn">
+    <wsdl:part name="parameters" element="tns:Lop_getTenLop" />
+  </wsdl:message>
+  <wsdl:message name="Lop_getTenLopSoapOut">
+    <wsdl:part name="parameters" element="tns:Lop_getTenLopResponse" />
   </wsdl:message>
   <wsdl:message name="Lop_checkTrungtenlopSoapIn">
     <wsdl:part name="parameters" element="tns:Lop_checkTrungtenlop" />
@@ -3041,11 +3072,11 @@
   <wsdl:message name="HocSinh_HSchuaphanlopSoapOut">
     <wsdl:part name="parameters" element="tns:HocSinh_HSchuaphanlopResponse" />
   </wsdl:message>
-  <wsdl:message name="HocSinh_listHSDuocLenLenSoapIn">
-    <wsdl:part name="parameters" element="tns:HocSinh_listHSDuocLenLen" />
+  <wsdl:message name="HocSinh_listHSDuocLenLopSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_listHSDuocLenLop" />
   </wsdl:message>
-  <wsdl:message name="HocSinh_listHSDuocLenLenSoapOut">
-    <wsdl:part name="parameters" element="tns:HocSinh_listHSDuocLenLenResponse" />
+  <wsdl:message name="HocSinh_listHSDuocLenLopSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_listHSDuocLenLopResponse" />
   </wsdl:message>
   <wsdl:message name="HocSinh_listHSLuBanSoapIn">
     <wsdl:part name="parameters" element="tns:HocSinh_listHSLuBan" />
@@ -3095,6 +3126,12 @@
   <wsdl:message name="HocSinh_LenCap_ListSoapOut">
     <wsdl:part name="parameters" element="tns:HocSinh_LenCap_ListResponse" />
   </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_ThemMoiSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_ThemMoi" />
+  </wsdl:message>
+  <wsdl:message name="HocSinh_LenCap_ThemMoiSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_ThemMoiResponse" />
+  </wsdl:message>
   <wsdl:message name="HocSinh_LenCap_InsertSoapIn">
     <wsdl:part name="parameters" element="tns:HocSinh_LenCap_Insert" />
   </wsdl:message>
@@ -3107,23 +3144,23 @@
   <wsdl:message name="HocSinh_LenCap_UpdateSoapOut">
     <wsdl:part name="parameters" element="tns:HocSinh_LenCap_UpdateResponse" />
   </wsdl:message>
-  <wsdl:message name="PhanLopTuDong_getsisoSoapIn">
-    <wsdl:part name="parameters" element="tns:PhanLopTuDong_getsiso" />
+  <wsdl:message name="HocSinh_LenCap_PhanLopTuDong_getsisoSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopTuDong_getsiso" />
   </wsdl:message>
-  <wsdl:message name="PhanLopTuDong_getsisoSoapOut">
-    <wsdl:part name="parameters" element="tns:PhanLopTuDong_getsisoResponse" />
+  <wsdl:message name="HocSinh_LenCap_PhanLopTuDong_getsisoSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopTuDong_getsisoResponse" />
   </wsdl:message>
-  <wsdl:message name="PhanLopTuDongSoapIn">
-    <wsdl:part name="parameters" element="tns:PhanLopTuDong" />
+  <wsdl:message name="HocSinh_LenCap_PhanLopTuDongSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopTuDong" />
   </wsdl:message>
-  <wsdl:message name="PhanLopTuDongSoapOut">
-    <wsdl:part name="parameters" element="tns:PhanLopTuDongResponse" />
+  <wsdl:message name="HocSinh_LenCap_PhanLopTuDongSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopTuDongResponse" />
   </wsdl:message>
-  <wsdl:message name="PhanLopThuCongSoapIn">
-    <wsdl:part name="parameters" element="tns:PhanLopThuCong" />
+  <wsdl:message name="HocSinh_LenCap_PhanLopThuCongSoapIn">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopThuCong" />
   </wsdl:message>
-  <wsdl:message name="PhanLopThuCongSoapOut">
-    <wsdl:part name="parameters" element="tns:PhanLopThuCongResponse" />
+  <wsdl:message name="HocSinh_LenCap_PhanLopThuCongSoapOut">
+    <wsdl:part name="parameters" element="tns:HocSinh_LenCap_PhanLopThuCongResponse" />
   </wsdl:message>
   <wsdl:message name="GiaoVien_InsertSoapIn">
     <wsdl:part name="parameters" element="tns:GiaoVien_Insert" />
@@ -3137,13 +3174,11 @@
   <wsdl:message name="GiaoVien_UpdateSoapOut">
     <wsdl:part name="parameters" element="tns:GiaoVien_UpdateResponse" />
   </wsdl:message>
-  <wsdl:message name="GiaoVien_DeleteSoapIn">
-    <wsdl:part name="parameters" element="tns:GiaoVien_Delete" />
-  </wsdl:message>
-  <wsdl:message name="GiaoVien_DeleteSoapOut">
-    <wsdl:part name="parameters" element="tns:GiaoVien_DeleteResponse" />
-  </wsdl:message>
   <wsdl:portType name="SSM_ServicesSoap">
+    <wsdl:operation name="GiaoVien_Delete">
+      <wsdl:input message="tns:GiaoVien_DeleteSoapIn" />
+      <wsdl:output message="tns:GiaoVien_DeleteSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GiaoVien_SearchbyName">
       <wsdl:input message="tns:GiaoVien_SearchbyNameSoapIn" />
       <wsdl:output message="tns:GiaoVien_SearchbyNameSoapOut" />
@@ -3508,13 +3543,13 @@
       <wsdl:input message="tns:Lop_ListbyNamHocSoapIn" />
       <wsdl:output message="tns:Lop_ListbyNamHocSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="Lop_getTenLop">
-      <wsdl:input message="tns:Lop_getTenLopSoapIn" />
-      <wsdl:output message="tns:Lop_getTenLopSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="Lop_ListbyKhoiLop">
       <wsdl:input message="tns:Lop_ListbyKhoiLopSoapIn" />
       <wsdl:output message="tns:Lop_ListbyKhoiLopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lop_getTenLop">
+      <wsdl:input message="tns:Lop_getTenLopSoapIn" />
+      <wsdl:output message="tns:Lop_getTenLopSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Lop_checkTrungtenlop">
       <wsdl:input message="tns:Lop_checkTrungtenlopSoapIn" />
@@ -3632,9 +3667,9 @@
       <wsdl:input message="tns:HocSinh_HSchuaphanlopSoapIn" />
       <wsdl:output message="tns:HocSinh_HSchuaphanlopSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="HocSinh_listHSDuocLenLen">
-      <wsdl:input message="tns:HocSinh_listHSDuocLenLenSoapIn" />
-      <wsdl:output message="tns:HocSinh_listHSDuocLenLenSoapOut" />
+    <wsdl:operation name="HocSinh_listHSDuocLenLop">
+      <wsdl:input message="tns:HocSinh_listHSDuocLenLopSoapIn" />
+      <wsdl:output message="tns:HocSinh_listHSDuocLenLopSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="HocSinh_listHSLuBan">
       <wsdl:input message="tns:HocSinh_listHSLuBanSoapIn" />
@@ -3668,6 +3703,10 @@
       <wsdl:input message="tns:HocSinh_LenCap_ListSoapIn" />
       <wsdl:output message="tns:HocSinh_LenCap_ListSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_ThemMoi">
+      <wsdl:input message="tns:HocSinh_LenCap_ThemMoiSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_ThemMoiSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="HocSinh_LenCap_Insert">
       <wsdl:input message="tns:HocSinh_LenCap_InsertSoapIn" />
       <wsdl:output message="tns:HocSinh_LenCap_InsertSoapOut" />
@@ -3676,17 +3715,17 @@
       <wsdl:input message="tns:HocSinh_LenCap_UpdateSoapIn" />
       <wsdl:output message="tns:HocSinh_LenCap_UpdateSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="PhanLopTuDong_getsiso">
-      <wsdl:input message="tns:PhanLopTuDong_getsisoSoapIn" />
-      <wsdl:output message="tns:PhanLopTuDong_getsisoSoapOut" />
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong_getsiso">
+      <wsdl:input message="tns:HocSinh_LenCap_PhanLopTuDong_getsisoSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_PhanLopTuDong_getsisoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="PhanLopTuDong">
-      <wsdl:input message="tns:PhanLopTuDongSoapIn" />
-      <wsdl:output message="tns:PhanLopTuDongSoapOut" />
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong">
+      <wsdl:input message="tns:HocSinh_LenCap_PhanLopTuDongSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_PhanLopTuDongSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="PhanLopThuCong">
-      <wsdl:input message="tns:PhanLopThuCongSoapIn" />
-      <wsdl:output message="tns:PhanLopThuCongSoapOut" />
+    <wsdl:operation name="HocSinh_LenCap_PhanLopThuCong">
+      <wsdl:input message="tns:HocSinh_LenCap_PhanLopThuCongSoapIn" />
+      <wsdl:output message="tns:HocSinh_LenCap_PhanLopThuCongSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GiaoVien_Insert">
       <wsdl:input message="tns:GiaoVien_InsertSoapIn" />
@@ -3696,13 +3735,18 @@
       <wsdl:input message="tns:GiaoVien_UpdateSoapIn" />
       <wsdl:output message="tns:GiaoVien_UpdateSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GiaoVien_Delete">
-      <wsdl:input message="tns:GiaoVien_DeleteSoapIn" />
-      <wsdl:output message="tns:GiaoVien_DeleteSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="SSM_ServicesSoap" type="tns:SSM_ServicesSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GiaoVien_Delete">
+      <soap:operation soapAction="http://tempuri.org/GiaoVien_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GiaoVien_SearchbyName">
       <soap:operation soapAction="http://tempuri.org/GiaoVien_SearchbyName" style="document" />
       <wsdl:input>
@@ -4522,8 +4566,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Lop_getTenLop">
-      <soap:operation soapAction="http://tempuri.org/Lop_getTenLop" style="document" />
+    <wsdl:operation name="Lop_ListbyKhoiLop">
+      <soap:operation soapAction="http://tempuri.org/Lop_ListbyKhoiLop" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4531,8 +4575,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Lop_ListbyKhoiLop">
-      <soap:operation soapAction="http://tempuri.org/Lop_ListbyKhoiLop" style="document" />
+    <wsdl:operation name="Lop_getTenLop">
+      <soap:operation soapAction="http://tempuri.org/Lop_getTenLop" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4801,8 +4845,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="HocSinh_listHSDuocLenLen">
-      <soap:operation soapAction="http://tempuri.org/HocSinh_listHSDuocLenLen" style="document" />
+    <wsdl:operation name="HocSinh_listHSDuocLenLop">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_listHSDuocLenLop" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4882,6 +4926,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_ThemMoi">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_ThemMoi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="HocSinh_LenCap_Insert">
       <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_Insert" style="document" />
       <wsdl:input>
@@ -4900,8 +4953,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PhanLopTuDong_getsiso">
-      <soap:operation soapAction="http://tempuri.org/PhanLopTuDong_getsiso" style="document" />
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong_getsiso">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopTuDong_getsiso" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4909,8 +4962,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PhanLopTuDong">
-      <soap:operation soapAction="http://tempuri.org/PhanLopTuDong" style="document" />
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopTuDong" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4918,8 +4971,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PhanLopThuCong">
-      <soap:operation soapAction="http://tempuri.org/PhanLopThuCong" style="document" />
+    <wsdl:operation name="HocSinh_LenCap_PhanLopThuCong">
+      <soap:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopThuCong" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4945,18 +4998,18 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GiaoVien_Delete">
-      <soap:operation soapAction="http://tempuri.org/GiaoVien_Delete" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="SSM_ServicesSoap12" type="tns:SSM_ServicesSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GiaoVien_Delete">
+      <soap12:operation soapAction="http://tempuri.org/GiaoVien_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GiaoVien_SearchbyName">
       <soap12:operation soapAction="http://tempuri.org/GiaoVien_SearchbyName" style="document" />
       <wsdl:input>
@@ -5776,8 +5829,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Lop_getTenLop">
-      <soap12:operation soapAction="http://tempuri.org/Lop_getTenLop" style="document" />
+    <wsdl:operation name="Lop_ListbyKhoiLop">
+      <soap12:operation soapAction="http://tempuri.org/Lop_ListbyKhoiLop" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5785,8 +5838,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Lop_ListbyKhoiLop">
-      <soap12:operation soapAction="http://tempuri.org/Lop_ListbyKhoiLop" style="document" />
+    <wsdl:operation name="Lop_getTenLop">
+      <soap12:operation soapAction="http://tempuri.org/Lop_getTenLop" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6055,8 +6108,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="HocSinh_listHSDuocLenLen">
-      <soap12:operation soapAction="http://tempuri.org/HocSinh_listHSDuocLenLen" style="document" />
+    <wsdl:operation name="HocSinh_listHSDuocLenLop">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_listHSDuocLenLop" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6136,6 +6189,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="HocSinh_LenCap_ThemMoi">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_ThemMoi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="HocSinh_LenCap_Insert">
       <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_Insert" style="document" />
       <wsdl:input>
@@ -6154,8 +6216,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PhanLopTuDong_getsiso">
-      <soap12:operation soapAction="http://tempuri.org/PhanLopTuDong_getsiso" style="document" />
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong_getsiso">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopTuDong_getsiso" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6163,8 +6225,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PhanLopTuDong">
-      <soap12:operation soapAction="http://tempuri.org/PhanLopTuDong" style="document" />
+    <wsdl:operation name="HocSinh_LenCap_PhanLopTuDong">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopTuDong" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6172,8 +6234,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PhanLopThuCong">
-      <soap12:operation soapAction="http://tempuri.org/PhanLopThuCong" style="document" />
+    <wsdl:operation name="HocSinh_LenCap_PhanLopThuCong">
+      <soap12:operation soapAction="http://tempuri.org/HocSinh_LenCap_PhanLopThuCong" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -6192,15 +6254,6 @@
     </wsdl:operation>
     <wsdl:operation name="GiaoVien_Update">
       <soap12:operation soapAction="http://tempuri.org/GiaoVien_Update" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GiaoVien_Delete">
-      <soap12:operation soapAction="http://tempuri.org/GiaoVien_Delete" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
