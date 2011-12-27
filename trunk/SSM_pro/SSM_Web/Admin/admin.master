@@ -267,7 +267,7 @@
 					<!-- end box / title -->
 					<div class="table">
 						<form id="form1" runat="server">
-                            <div>
+                            <div align="center">
                                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                                 </asp:ContentPlaceHolder>
                             </div>

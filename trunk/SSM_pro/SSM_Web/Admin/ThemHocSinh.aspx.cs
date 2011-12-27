@@ -23,7 +23,8 @@ public partial class Admin_QLHocSinh : System.Web.UI.Page
              txtmahs.Text = "08";
             lblmahs.Text = hsbus.getMaHS(txtmahs.Text.ToString()).ToString();
             }
-
+        Label lb = (Label)Master.FindControl("page_title");
+        lb.Text = "Thêm học sinh";
     }
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
